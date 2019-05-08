@@ -1,0 +1,12 @@
+#streamer_wrapper{
+    display: flex;
+}
+
+.streamer_element{
+    width : 120px;
+    margin : 15px auto;
+}
+
+.ReactTable{
+    text-align: center;
+}

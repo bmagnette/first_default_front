@@ -1,0 +1,17 @@
+.admin_wrapper{
+    margin-top: 50px;
+}
+
+.admin_stats_wrapper{
+    width: 25%;
+    padding: 20px;
+    background: #cccccc;
+}
+
+.admin_stats_wrapper ul{
+    list-style-type: none;
+}
+
+.admin_stats_wrapper ul li{
+    margin: 5px;
+}

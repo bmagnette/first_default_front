@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="397fe8c7-f2b7-40dd-a5f4-ccf99cf5180e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PublicApp/Components/Common/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PublicApp/Forms/SusbcribeForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/public/css/PublicApp/public_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/api/auth/connexion.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/api/auth/connexion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/api/auth/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/api/auth/register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/api/mailer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/api/mailer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/core/decorators/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/core/decorators/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/core/mailer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/core/mailer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/run_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../back_white_app/templates/mail/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/../back_white_app/templates/mail/reset_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PublicApp/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RouterExample.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouterExample.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Components/Common/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Components/Common/Nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Forms/ChangePasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Forms/ChangePasswordForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Forms/EditProfilForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Forms/EditProfilForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Streamer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Streamer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Wrapper/SettingsPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/private/Wrapper/dashboardPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/private/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/private/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/private/Settings.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/private/Streamer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Streamer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/public/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PublicApp/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/public/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PublicApp/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/public/public_form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Components/Common/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Components/Common/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Components/Common/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/PasswordRequestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/ResettingPasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/ResettingPasswordForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/SignInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/SusbcribeForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/contact_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/contact_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/IndexPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/PasswordResetPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/PasswordResetPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/PasswordResetPasswordPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/SignInPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/SubscribePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/SubscribePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="678" />
+    <option name="width" value="695" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="397fe8c7-f2b7-40dd-a5f4-ccf99cf5180e" name="Default Changelist" comment="" />
+      <created>1557322334188</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557322334188</updated>
+      <workItem from="1557322425023" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

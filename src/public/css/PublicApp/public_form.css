@@ -1,0 +1,193 @@
+.contact_form_container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.contact_form_container form{
+    width: 70%;
+}
+
+.contact_form_container .contact_header{
+    margin-bottom: 20px;
+}
+
+.form_title{
+    text-align: center;
+    margin : 30px;
+}
+
+.signup_form_wrapper{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+Formulaire d'enregistrement
+*/
+
+.signup_frame{
+    width: 100%;
+    display: flex;
+    box-shadow: 5px 5px 5px 5px grey;
+}
+
+.signup_name_wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign_up_frame_right_wrapper table{
+    width: 100%;
+}
+
+.signup_name_wrapper .form-group.has-feedback:nth-child(2){
+    width: 175px;
+}
+
+.signup_name_wrapper .form-group.has-feedback:nth-child(3){
+    width: 175px;
+}
+
+.btn_gender_wrapper{
+    position: relative;
+    top: 50%;
+    transform: translateY(20%);
+}
+
+.signup_name_wrapper_password{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.sign_up_submit{
+    text-align: center;
+}
+
+.sign_up_submit button{
+    margin: 15px;
+}
+.signup_frame_left{
+    width: 50%;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+    ), url("../../img/sebastian-unrau-47679-unsplash.jpg") no-repeat;
+    background-size: cover;
+}
+
+.signup_frame_right{
+    width: 50%;
+    background-color: #F8F8F8;
+}
+
+.sign_up_frame_right_wrapper{
+    margin: 25px;
+}
+
+/*
+Fin de formulaire d'enregistrement
+*/
+.password_request_info{
+    height: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: gainsboro;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.password_request_info .password_request_text{
+    line-height: 50px;
+    text-align: center;
+}
+/*For all form */
+.form_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width : 40%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pop_up_information{
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color : #F8F8F8;
+    color: black;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
