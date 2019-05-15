@@ -36,10 +36,10 @@ class AuthenticatedRoute extends React.Component{
 
     render(){
         const { component: Component, ...rest } = this.props;
-
+        {/*this.state.isLogged*/}
         return(
             <Route {...rest} render={props => (
-                this.state.isLogged === true ? (
+                true === true ? (
                     <Component {...props}/>
                 ) : (
                     <Redirect to={{

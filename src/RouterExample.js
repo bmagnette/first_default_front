@@ -19,8 +19,8 @@ const RouterExample = () => (
         <div>
             {/* Presentation */}
             <Route exact path="/" component={IndexPage}/>
-            <Route exact path="/tarification" component={PricingPage}/>
-            <Route exact path="/services" component={ServicesPage}/>
+            {/* <Route exact path="/tarification" component={PricingPage}/>
+            <Route exact path="/services" component={ServicesPage}/>*/}
 
             {/* Public member */}
             <Route exact path="/susbcribe" component={SubscribePage}/>
@@ -33,8 +33,8 @@ const RouterExample = () => (
 
             {/* Profile member */}
             <AuthenticatedRoute exact path="/profil" component={ProfilPage}/>
-            <AuthenticatedRoute exact path="/invoice" component={SettingOffersPage}/>
-            <AuthenticatedRoute exact path="/invoice/:payment_state" component={SettingOffersPage} paymentCheck={true} />
+            {/* <AuthenticatedRoute exact path="/invoice" component={SettingOffersPage}/>
+            <AuthenticatedRoute exact path="/invoice/:payment_state" component={SettingOffersPage} paymentCheck={true} />*/}
 
             {/* Admin dashboard */}
             <AdminRoute exact path="/admin" component={AdminPage}/>

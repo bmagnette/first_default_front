@@ -1,3 +1,5 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 
 #app_container{
     width: 100%;
@@ -6,6 +8,10 @@
 
 #content_wrapper{
     width: 100%;
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    display: flex;
 }
 
 #header_app{

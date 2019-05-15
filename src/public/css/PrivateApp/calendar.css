@@ -1,0 +1,29 @@
+
+#calendar_wrapper{
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#add_event_form .daily_event_form_wrapper{
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    width : 100%;
+}
+
+#add_event_form .daily_event_form{
+    width: 50%;
+    text-align: center;
+}
+
+#add_event_form .specific_date_form_wrapper{
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+.modal-footer{
+    text-align: center;
+}

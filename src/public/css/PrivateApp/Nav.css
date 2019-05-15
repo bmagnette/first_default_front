@@ -2,9 +2,6 @@
     width: 10%;
     min-width: 220px;
     background : #2A3F52;
-    position: absolute;
-    top: 50px;
-    bottom: 0;
     border-top: solid white 1px;
     color : #EDEDED;
 }
