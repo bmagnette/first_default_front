@@ -59,7 +59,6 @@ class SignInForm extends React.Component{
                 if(response.status === 400){this._addNotification("Identifiant incorrect", "error")}
                 if(response.status === 401){this.setState({ showisConfirmed: true})}
                 if(response.status === 405){
-                    console.log("test");
                     this._addNotification("User doesnt exist", "error");
                 }
             });

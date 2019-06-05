@@ -6,6 +6,7 @@ import {BACK_URL} from "../constants";
 class InvoiceTable extends React.Component{
     constructor(props) {
         super(props);
+
         this.state = {
             redirectToNewPage: false,
             redirectUrl: '',
@@ -30,32 +31,34 @@ class InvoiceTable extends React.Component{
             })
     };
 
-    // const data1 = [{
-    //     date: '25/03/1995',
-    //     period: 12,
-    //     invoice: <span className="glyphicon glyphicon-file"></span>,
-    //     price: '5.99$'
-    //     }, {
-    //     date: '26/03/1996',
-    //     period: 28,
-    //     invoice: <span className="glyphicon glyphicon-file"></span>,
-    //     price: '12.99$'}];
-
     render(){
         const payment_data = this.state.payment_data;
-        console.log(payment_data);
+        console.log(payment_data.length);
         let res = [];
-        Object.keys(this.state.payment_data).forEach(function(key) {
-            let cur_res = {
-                payment_state: payment_data[key]["payment_state"],
-                payment_date: payment_data[key]["payment_date"],
-                payment_role: payment_data[key]["payment_role"],
-                payment_duration: payment_data[key]["payment_duration"],
-                payment_download_url: <span className="glyphicon glyphicon-file">{payment_data[key]["payment_download_url"]}</span>,
-                payment_amount: payment_data[key]["payment_amount"]
-            };
-            res.push(cur_res);
-        });
+        if(payment_data.length !== 0){
+            Object.keys(payment_data).forEach(function(key) {
+                let cur_res = {
+                    payment_state: payment_data[key]["payment_state"],
+                    payment_date: payment_data[key]["payment_date"],
+                    payment_role: payment_data[key]["payment_role"],
+                    payment_duration: payment_data[key]["payment_duration"],
+                    payment_download_url: <span className="glyphicon glyphicon-file">{payment_data[key]["payment_download_url"]}</span>,
+                    payment_amount: payment_data[key]["payment_amount"]
+                };
+                res.push(cur_res);
+            });
+        }
+        else{
+            res.push({
+                payment_state: "Test",
+                payment_date: "Test",
+                payment_role: "Test",
+                payment_duration: "Test",
+                payment_download_url: "Test",
+                payment_amount: "Test",
+            })
+        }
+
 
         const columns1 = [{
             Header: 'Date',
@@ -79,7 +82,7 @@ class InvoiceTable extends React.Component{
 
         return (
             <div className="invoice_table">
-                <ReactTable data={res} columns={columns1} showPagination={false} minRows={1} filterable={false}
+                <ReactTable data={res} columns={columns1} showPagination={false} minRows={0} filterable={false}
                             sortable={false} resizable={false}/>
             </div>
         )

@@ -1,5 +1,5 @@
 import React  from 'react';
-import { FormGroup, Button, Form, FormControl, ControlLabel, Label } from 'react-bootstrap';
+import { FormGroup, Button, FormControl, Label } from 'react-bootstrap';
 import NotificationSystem from 'react-notification-system';
 import '../../public/css/PublicApp/public_form.css';
 import {BACK_URL, APPLICATION_NAME} from "../../constants";

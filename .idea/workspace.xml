@@ -2,77 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="397fe8c7-f2b7-40dd-a5f4-ccf99cf5180e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PublicApp/Components/Common/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PublicApp/Forms/SusbcribeForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Settings.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/public/css/PublicApp/public_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/api/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/api/auth/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/api/auth/connexion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/api/auth/register.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/api/auth/resetting.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/api/mailer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/core/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/core/decorators/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/core/decorators/security.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/core/mailer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/extensions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/models/user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/run_app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/templates/mail/reset_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../back_white_app/templates/mail/welcome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrivateApp/Wrapper/CalendarPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PublicApp/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrivateApp/AuthenticatedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/AuthenticatedRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PublicApp/Components/Common/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Components/Common/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Components/Common/SettingsNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Components/Common/SettingsNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/InvoiceTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/InvoiceTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Streamer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Streamer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrivateApp/Wrapper/profilPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Wrapper/userInformationPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PublicApp/Forms/contact_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/contact_form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RouterExample.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouterExample.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/private/Components/Common/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/private/Components/Common/Nav.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/private/Forms/ChangePasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Forms/ChangePasswordForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/private/Forms/EditProfilForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Forms/EditProfilForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/private/Streamer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrivateApp/Streamer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/private/Wrapper/SettingsPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/PrivateApp/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/private/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/private/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/private/Settings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/private/Streamer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Streamer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/public/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PublicApp/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/public/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PublicApp/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/public/public_form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Components/Common/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Components/Common/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Components/Common/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/PasswordRequestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/ResettingPasswordForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/ResettingPasswordForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/SignInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/SusbcribeForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Forms/contact_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Forms/contact_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/IndexPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/PasswordResetPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/PasswordResetPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/PasswordResetPasswordPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/SignInPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public_space/Wrapper/SubscribePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PublicApp/Wrapper/SubscribePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/PrivateApp/Settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Settings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/PrivateApp/Streamer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/Streamer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/PrivateApp/offers_saas.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/PrivateApp/offers_saas.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,11 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js">
+      <file leaf-file-name="RealEstateView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/RealEstateView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="93" column="48" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -153,20 +105,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/constants/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="52" column="93" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="93" />
+            <state relative-caret-position="102">
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/userInformation.js">
+      <file leaf-file-name="CalendarPage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/CalendarPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="26" column="37" selection-start-line="26" selection-end-line="27" />
+            <state relative-caret-position="816">
+              <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewEventModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/NewEventModal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1462">
+              <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,10 +143,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CoffeeScript File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>recipe-title</find>
+      <find>private_form_wrapper</find>
+      <find>information</find>
+      <find>Emprunt</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -187,20 +163,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/AdminApp/AdminRoute.js" />
-        <option value="$PROJECT_DIR$/src/RouterExample.js" />
-        <option value="$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js" />
-        <option value="$PROJECT_DIR$/src/PublicApp/Components/Common/Footer.js" />
-        <option value="$PROJECT_DIR$/src/PrivateApp/AuthenticatedRoute.js" />
-        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/card.scss" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/DashBoardPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/AddRealEstate.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/EditProfilForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/SimulatorRealEstate.js" />
         <option value="$PROJECT_DIR$/src/public/css/PrivateApp/Header.css" />
-        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/calendar.css" />
-        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstateTypeForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/SituationForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/DescriptionForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/FiscaliteForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/PretBancaireForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/TenantForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/AddRealEstateForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/AddRealEstate.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/profilPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Components/NewEventModal.js" />
+        <option value="$PROJECT_DIR$/src/PublicApp/Forms/contact_form.js" />
+        <option value="$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js" />
+        <option value="$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/ProductPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/TenantForm.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/Streamer.css" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Streamer.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Components/Common/SettingsNav.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/userInformationPage.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/offers_saas.css" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/InvoiceTable.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/DashboardPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/ProfilPage.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/FiscaliteForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Components/ModifyEventModal.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/CalendarPage.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/Settings.css" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/SituationForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/TypeRentForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/RealEstateTypeForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/PretBancaireForm.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/DescriptionForm.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/RealEstateView.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/AddRealEstateForm.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css" />
+        <option value="$PROJECT_DIR$/src/RouterExample.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstatePage.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/card.css" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstateView.js" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/RealEstatePage.js" />
+        <option value="$PROJECT_DIR$/src/public/css/PrivateApp/RealEstateView.css" />
+        <option value="$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/RealEstateView.js" />
+        <option value="$PROJECT_DIR$/src/constants/index.js" />
       </list>
     </option>
   </component>
@@ -219,7 +232,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="678" />
+    <option name="x" value="591" />
+    <option name="y" value="268" />
     <option name="width" value="695" />
     <option name="height" value="775" />
   </component>
@@ -231,20 +245,51 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="front_white_app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front_white_app" type="462c0819:PsiDirectoryNode" />
+              <item name="white_app_front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="white_app_front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="white_app_front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="white_app_front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="white_app_front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="white_app_front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="white_app_front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="white_app_front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="PrivateApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="white_app_front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="white_app_front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="PrivateApp" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="white_app_front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="white_app_front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="PrivateApp" type="462c0819:PsiDirectoryNode" />
+              <item name="Wrapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,6 +303,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2018.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pierre\WebstormProjects\white_app_front\src\PrivateApp\Wrapper\RealEstate" />
+      <recent name="C:\Users\Pierre\WebstormProjects\white_app_front\src\PrivateApp\Forms\RealEstate" />
+      <recent name="C:\Users\Pierre\WebstormProjects\white_app_front\src\public\img" />
+      <recent name="C:\Users\Pierre\WebstormProjects\white_app_front\src\public" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -270,7 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.Run Front">
     <configuration name="Run Front" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -279,8 +332,25 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
-      <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <list>
+      <item itemvalue="npm.Run Front" />
+      <item itemvalue="npm.build" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -300,74 +370,93 @@
       <workItem from="1557853603160" duration="7000" />
       <workItem from="1557853943887" duration="11550000" />
       <workItem from="1557940810533" duration="4877000" />
+      <workItem from="1557951741515" duration="2155000" />
+      <workItem from="1557954063356" duration="1774000" />
+      <workItem from="1558029887479" duration="3070000" />
+      <workItem from="1558163243650" duration="1749000" />
+      <workItem from="1558273001429" duration="20032000" />
+      <workItem from="1558376398568" duration="6396000" />
+      <workItem from="1558459658763" duration="4157000" />
+      <workItem from="1558634443675" duration="4604000" />
+      <workItem from="1558767313370" duration="6534000" />
+      <workItem from="1558857075091" duration="10768000" />
+      <workItem from="1559064717608" duration="11586000" />
+      <workItem from="1559161151005" duration="5900000" />
+      <workItem from="1559205123854" duration="21561000" />
+      <workItem from="1559377370155" duration="607000" />
+      <workItem from="1559473708321" duration="18136000" />
+      <workItem from="1559547022033" duration="4420000" />
+      <workItem from="1559754667189" duration="651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46821000" />
+    <option name="totallyTimeSpent" value="170921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25567323" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33384615" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17760417" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3276923" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3276923" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="SciView" order="7" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23676248" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33384615" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="SciView" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33384615" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32923076" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="SciView" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23676248" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,199 +466,350 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/EditProfilForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="17">
+          <caret line="16" selection-start-line="16" selection-end-line="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js" />
-    <entry file="file://$PROJECT_DIR$/src/AdminApp/AdminRoute.js">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="136">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RadioButtonForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
+        <state relative-caret-position="-605" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PublicApp/Components/Common/Footer.js">
+    <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/SusbcribeForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <caret line="52" selection-start-line="52" selection-end-line="63" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/AuthenticatedRoute.js">
+    <entry file="file://$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/Common/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css">
+    <entry file="file://$PROJECT_DIR$/src/AdminApp/AdminRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/Header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@fullcalendar/core/main.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2628">
-          <caret line="1812" column="10" selection-start-line="1812" selection-start-column="10" selection-end-line="1812" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@fullcalendar/react/main.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RouterExample.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/PasswordRequestForm.js">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/AuthenticatedRoute.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="59" />
+        <state relative-caret-position="782">
+          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PublicApp/Wrapper/PasswordResetPage.js">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/TenantForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/@fullcalendar/moment-timezone/main.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@fullcalendar/moment-timezone/main.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="44" lean-forward="true" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        <state relative-caret-position="397">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PublicApp/Wrapper/IndexPage.js">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/Common/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" selection-start-line="14" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="85">
+          <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/Header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/Streamer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Streamer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/Common/SettingsNav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/offers_saas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/ProfilPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/FiscaliteForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/contact_form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="78" column="35" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="78" selection-end-column="35" />
+        <state relative-caret-position="-391">
+          <caret line="79" column="52" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/EditProfilForm.js">
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/Settings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/SituationForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="67" column="102" selection-start-line="67" selection-start-column="102" selection-end-line="67" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/RealEstateTypeForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/DescriptionForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="81" column="64" selection-start-line="81" selection-start-column="64" selection-end-line="81" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/InvoiceTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/DashboardPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/ProductPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/SettingOffersPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/userInformationPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/RealEstateView.js" />
+    <entry file="file://$USER_HOME$/Downloads/Winvest/Symfony/src/Invest/PlatformBundle/Resources/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Winvest/Symfony/src/Invest/PlatformBundle/Resources/public/css/card.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="43" lean-forward="true" selection-start-line="14" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/TypeRentForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/AddRealEstateForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="156" column="34" lean-forward="true" selection-start-line="156" selection-start-column="34" selection-end-line="156" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/Common/Nav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="53" selection-start-line="53" selection-end-line="55" selection-end-column="22" />
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/Nav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Forms/RealEstate/PretBancaireForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" selection-start-line="44" selection-end-line="46" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RouterExample.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="80" lean-forward="true" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/profilPage.js">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/SimulatorRealEstate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-295">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/SusbcribeForm.js">
+    <entry file="file://$PROJECT_DIR$/src/public/img/default_house.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/RealEstatePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="189" column="78" lean-forward="true" selection-start-line="189" selection-start-column="78" selection-end-line="189" selection-end-column="78" />
+        <state relative-caret-position="102">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/calendar.css">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/AddRealEstate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="68">
+          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/userInformation.js">
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/card.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="26" column="37" selection-start-line="26" selection-end-line="27" />
+        <state relative-caret-position="515">
+          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PublicApp/Forms/SignInForm.js">
+    <entry file="file://$PROJECT_DIR$/src/public/css/PrivateApp/RealEstateView.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="52" column="93" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="93" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/dashboardPage.js">
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/NewEventModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+        <state relative-caret-position="1462">
+          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Components/ModifyEventModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="124" column="28" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="124" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/CalendarPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrivateApp/Wrapper/RealEstate/RealEstateView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="93" column="48" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
         </state>
       </provider>
     </entry>

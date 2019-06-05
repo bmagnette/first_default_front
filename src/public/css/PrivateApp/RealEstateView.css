@@ -1,0 +1,103 @@
+.real_estate_view_header{
+    display:flex;
+    justify-content: space-between;
+    margin: 20px;
+    border-bottom: 1px solid white;
+    padding-bottom : 10px;
+}
+
+.real_estate_view_header .btn{
+    margin-right: 10px;
+}
+
+.real_estate_main_description{
+    width: 100%;
+}
+
+.real_estate_description{
+    display: flex;
+    min-height: 300px;
+    height: 300px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.real_estate_picture{
+    width: 40%;
+}
+
+.real_estate_picture img{
+    width: 100%;
+    height: 100%;
+}
+
+.real_estate_description h3{
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.real_estate_qualitative_information{
+    display:flex;
+    justify-content: space-around;
+}
+
+.real_estate_qualitative_information ul{
+    list-style-type:none;
+    padding:0;
+}
+
+.real_estate_qualitative_information_global{
+    display: flex;
+}
+
+.real_estate_qualitative_information h4{
+    margin-top: 0;
+}
+
+.real_estate_button{
+    text-align:center;
+    margin: 20px;
+}
+
+.real_estate_button .btn{
+    margin: 10px;
+}
+
+.real_estate_details{
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.real_estate_details .well{
+    margin-top: 20px;
+}
+
+.real_estate_details .well ul{
+    list-style-type:none;
+    display:flex;
+    justify-content: space-between;
+}
+
+.real_estate_graphics{
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.real_estate_graphics h4{
+    margin-right: 5px;
+}
+
+.real_estate_qualitative_information_global_ul{
+    display: flex;
+}
+
+.real_estate_qualitative_information_global_ul_wrapper:nth-child(0){
+    margin: 10px;
+}

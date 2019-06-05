@@ -7,8 +7,9 @@ const SettingsNav = () => {
         <div className="account_settings_nav_wrapper">
             <h3>Paramètres du compte</h3>
             <ul className="account_settings_nav">
-                <li><Link to="/profil">Informations de compte</Link></li>
-                <li><Link to="/invoice">Plan & Factures</Link></li>
+                <li><Link to="/profil">Profil d'investisseur</Link></li>
+                <li><Link to="/information">Informations de compte</Link></li>
+                <li><Link to="/invoice">Services et Factures</Link></li>
             </ul>
         </div>
     )

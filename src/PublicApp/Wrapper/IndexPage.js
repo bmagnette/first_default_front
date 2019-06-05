@@ -8,8 +8,6 @@ import instagram_icon from "../../public/img/instagram.png";
 import linkedin_icon from "../../public/img/social-linkedin-circular-button.png";
 import {FRONT_URL} from "../../constants";
 import '../../public/css/PrivateApp/offers_saas.css';
-import hamburger_pic from "../../public/img/hamburgare-icon.png";
-import {Link} from "react-router-dom";
 
 class IndexPage extends React.Component{
     constructor(props) {

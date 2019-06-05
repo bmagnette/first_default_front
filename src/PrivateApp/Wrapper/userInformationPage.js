@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../Components/Common/Header';
-    import '../../public/css/PrivateApp/Settings.css';
+import '../../public/css/PrivateApp/Settings.css';
 import SettingsNav from "../Components/Common/SettingsNav";
 import UserInformation from "../Components/userInformation";
 import ChangePasswordForm from "../Forms/ChangePasswordForm";
 import RadioButtonForm from "../Forms/RadioButtonForm";
 
 
-const ProfilPage = () => {
+const UserInformationPage = () => {
 
     return (
         <div id="app_container">
@@ -50,4 +50,4 @@ const ProfilPage = () => {
 
 
 
-export default ProfilPage;
+export default UserInformationPage;

@@ -25,10 +25,6 @@ class PrivateHeader extends React.Component{
             user_profil: user["role_user"]})
     }
 
-    Disconnect_account = () =>{
-        console.log("CA MARCHE QUAND MEME");
-    };
-
     render(){
         const first_name = this.state.first_name;
         const last_name = this.state.last_name;
@@ -58,7 +54,7 @@ class PrivateHeader extends React.Component{
                         {first_name } {last_name}
                         <ul>
                             <li className="lien_cliquable"><Link to="/profil">Mes paramètres</Link></li>
-                            <li className="lien_cliquable"><Link onClick={this.Disconnect_account()} to="/">Se déconnecter</Link></li>
+                            <li className="lien_cliquable"><Link to="/">Se déconnecter</Link></li>
                         </ul>
                     </li>
                 </ul>

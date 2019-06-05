@@ -51,6 +51,10 @@
     padding: 10px;
 }
 
+.add_real_estate_form_wrapper{
+    margin: 50px;
+}
+
 .account_settings_information_frame{
     background-color: #F8F8F8;
     border-radius: 5px;

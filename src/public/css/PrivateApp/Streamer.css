@@ -1,10 +1,18 @@
 #streamer_wrapper{
     display: flex;
+    width: 90%;
+    height: 100px;
+    min-height: 100px;
+    margin: 20px auto 0;
+    justify-content: space-around;
+    box-shadow: 3px 3px 3px 3px grey;
 }
 
 .streamer_element{
+    height: 100px;
     width : 120px;
-    margin : 15px auto;
+    margin : 0 auto;
+    text-align: center;
 }
 
 .ReactTable{

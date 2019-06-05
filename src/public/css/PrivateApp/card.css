@@ -1,0 +1,108 @@
+.section_title{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.content-right-wrapper, .content-right-wrapper2{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content-right-wrapper2 .btn{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.btn-group{
+    float: right;
+}
+
+.situation_form_wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.situation_form_proposition{
+    display: flex;
+    flex-direction: column;
+}
+
+.situation_form_proposition h4{
+    text-align: center;
+}
+
+.situation_form_proposition .situation_form_slider{
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.add_apartment_wrapper{
+    margin-top: 150px;
+}
+
+.situation_form_wrapper2{
+    display: flex;
+}
+
+.situation_form_wrapper_button{
+    float: right;
+}
+
+.cards_wrapper{
+    width: 95%;
+    display: flex;
+    margin: 20px auto 0;
+}
+
+.card_wrapper a:hover{
+    text-decoration: none;
+}
+
+.cards_wrapper .default_card{
+    margin: 50px auto 0;
+    opacity: 0.4;
+}
+
+.default_card h4{
+    text-align: center;
+}
+
+.cards_wrapper .card_wrapper:hover{
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.card_wrapper{
+    width: 280px;
+    height: 350px;
+    box-shadow: 3px 3px 3px grey;
+    margin: 20px;
+}
+
+.card_picture{
+    width: 100%;
+    height: 150px;
+}
+
+.card_picture img{
+    width: 100%;
+    height: 150px;
+}
+
+.card_header h3{
+    text-align: center;
+    margin: 20px;
+}
+
+#dashboard_graphs{
+    display: flex;
+    margin-top: 50px;
+}
+
+#dashboard_graphs .recharts-wrapper{
+    margin: 0 auto;
+}

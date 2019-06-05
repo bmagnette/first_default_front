@@ -35,7 +35,12 @@
 /* Table */
 .invoice_table{
     width: 80%;
+    min-height: 100px;
     margin: 30px auto;
+}
+
+.invoice_table .ReactTable{
+    min-height: 100px;
 }
 
 

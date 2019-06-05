@@ -16,12 +16,30 @@ const Nav = () => {
                                          Tableau de bord
                                 </li>
                             </Link>
-                            <Link to="/dashboard">
+                            <Link to="/immobilier">
+                                <li>
+                                    <span className="glyphicon glyphicon-signal"></span>
+                                    Vos biens
+                                </li>
+                            </Link>
+                            <Link to="/simulation">
+                                <li>
+                                    <span className="glyphicon glyphicon-signal"></span>
+                                    Simulation
+                                </li>
+                            </Link>
+                            <Link to="/calendar">
+                                <li>
+                                    <span className="glyphicon glyphicon-signal"></span>
+                                    Calendrier
+                                </li>
+                            </Link>
+                            {/*<Link to="/produits">
                             <li>
                                     <span className="glyphicon glyphicon-cog"></span>
-                                    Gestion d'entités
+                                    Produits
                             </li>
-                            </Link>
+                            </Link>*/}
                         </ul>
                     </div>
                 </div>
