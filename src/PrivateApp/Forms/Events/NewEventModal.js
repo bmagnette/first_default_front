@@ -1,5 +1,5 @@
 import React from 'react';
-import {BACK_URL} from "../../constants";
+import {BACK_URL} from "../../../constants/index";
 import DatePicker from 'react-datepicker';
 import TimePicker from 'rc-time-picker';
 import moment from 'moment';
@@ -20,6 +20,7 @@ class NewEventModal extends React.Component {
             hour_event: m,
             duration_event: m,
             isAllDay: false,
+            event_type: ""
         };
     }
 
@@ -29,18 +30,19 @@ class NewEventModal extends React.Component {
         });
     };
 
-    componentDidMount() {
-        this._notificationSystem = this.refs.notificationSystem;
-        if (this.props.iseditable === 1) {
-            this.setState({
-                event_date: this.props.eventclicked.start_date,
-                name_event: this.props.eventclicked.title,
-                description_event: this.props.eventclicked.description,
-                location_event: this.props.eventclicked.location,
-                isAllDay: this.props.eventclicked.isAllDay,
-            })
-        }
-    };
+    // componentDidMount() {
+    //     this._notificationSystem = this.refs.notificationSystem;
+    //     if (this.props.iseditable === 1) {
+    //         this.setState({
+    //             event_date: this.props.eventclicked.start_date,
+    //             name_event: this.props.eventclicked.title,
+    //             description_event: this.props.eventclicked.description,
+    //             location_event: this.props.eventclicked.location,
+    //             isAllDay: this.props.eventclicked.isAllDay,
+    //             event_type : this.props.eventclicked.event_type
+    //         })
+    //     }
+    // };
 
     _addNotification = (message, level) => {
         this._notificationSystem.addNotification({
@@ -50,18 +52,26 @@ class NewEventModal extends React.Component {
     };
 
     onChangeHour = hour_event => {
-        console.log(hour_event.format('HH:mm'));
         this.setState({hour_event: hour_event.format('HH:mm')});
     };
 
     onChangeMinute = (duration_event) => {
-        console.log(duration_event.format('mm'));
         this.setState({
             duration_event: duration_event.format('mm')
         });
     };
 
     handleSubmit = (event) => {
+        if(this.state.isAllDay === true){
+            let date = this.state.event_date;
+            date.setDate(date.getDate() + 1 );
+            date.setHours(0);
+            date.setMinutes(0);
+            date.setSeconds(0);
+            this.setState({event_date: date});
+        }
+
+        console.log(this.state);
         fetch(BACK_URL + 'calendar/create', {
             method: 'POST',
             headers: {
@@ -77,7 +87,9 @@ class NewEventModal extends React.Component {
                 "event_date": this.state.event_date,
                 "hour_event": this.state.hour_event,
                 "duration": this.state.duration_event,
-                "isAllDay": this.state.isAllDay
+                "isAllDay": this.state.isAllDay,
+                "property_id": this.state.propertyid,
+                "event_type": this.state.event_type
             })
         })
             .catch(error => {
@@ -172,6 +184,15 @@ class NewEventModal extends React.Component {
                                 <Label>Lieux</Label>
                                 <FormControl required type="text" name="location_event" onChange={this.handleChange}/>
                                 <FormControl.Feedback/>
+                            </FormGroup>
+                            <FormGroup controlId="formValidationSuccess3">
+                                <Label>Type d'évènements</Label>
+                                <br/>
+                                <select defaultValue={this.state.event_type} onChange={this.handleChange} placeholder="Type d'évènements">
+                                    <option key={"option_" + "Travaux"} value="Travaux" name={"Travaux"}>Travaux</option>
+                                    <option key={"option_" + "Visite"} value="Visite" name={"Visite"}>Travaux</option>
+                                    <option key={"option_" + "Notaire"} value="Notaire" name={"Notaire"}>Notaire</option>
+                                </select>
                             </FormGroup>
                             <div className="daily_event_form_wrapper">
                                 <FormGroup className="daily_event_form" controlId="formValidationSuccess1">

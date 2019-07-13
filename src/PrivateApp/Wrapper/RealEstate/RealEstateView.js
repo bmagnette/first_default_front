@@ -7,14 +7,19 @@ import {Link, Redirect} from "react-router-dom";
 import DefaultImage from '../../../public/img/default_house.jpg';
 import {Button, Modal} from 'react-bootstrap';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
-import NewEventModal from '../../Components/NewEventModal';
+import NewEventModal from '../../Forms/Events/NewEventModal';
 import {BACK_URL} from "../../../constants";
+import numeral from "numeral";
+import moment from 'moment';
+import Calendar from 'react-calendar';
+import PdfIcon from '../../../public/img/icons/file_pdf2.png';
 
 class RealEstateView extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            date: new Date(),
             showGraphics: false,
             showDescriptif: true,
             showTenants: false,
@@ -24,6 +29,8 @@ class RealEstateView extends React.Component{
             redirect: false
         }
     }
+
+    onChange = date => this.setState({ date });
 
     onClickButtonGraphics = () => {
         this.setState({showGraphics: true, showDescriptif: false, showTenants: false, showDebt: false});
@@ -86,6 +93,7 @@ class RealEstateView extends React.Component{
         let modalClose2 = () => this.setState({DeleteBuildingModalShow: false});
 
         const { data } = this.props.location;
+
         if(data === undefined){
             return <Redirect to='/immobilier'/>;
         }
@@ -216,26 +224,61 @@ class RealEstateView extends React.Component{
         }
         else if(this.state.showDescriptif === true){
             showInformation =
-                <div className="real_estate_details">
-                    <div className="well">
-                        <h4>Charges : </h4>
-                        <hr/>
-                        <ul>
-                            <li>{data["mortgage"]["loan_amount"]}</li>
-                        </ul>
+                <div className="real_estate_details descriptif">
+                    <div className="descriptif_info_wrapper">
+                        <div className="well">
+                            <h4>Charges : </h4>
+                            <hr/>
+                            <ul>
+                                <li>{data["mortgages"]["loan_amount"]}</li>
+                            </ul>
+                        </div>
+                        <div className="well">
+                            <h4>Travaux</h4>
+                            <hr/>
+                            <ul>
+                                <li>Quittance de loyer, avis d'échéance, contrat de location : 05/05/17</li>
+                                <li>Isolation : 06/06/18</li>
+                            </ul>
+                        </div>
+                        <div className="well">
+                            <h4>Notes</h4>
+                            <hr/>
+                            Mon commentaire.
+                        </div>
                     </div>
-                    <div className="well">
-                        <h4>Travaux</h4>
-                        <hr/>
-                        <ul>
-                            <li>Charpente : 05/05/17</li>
-                            <li>Isolation : 06/06/18</li>
-                        </ul>
-                    </div>
-                    <div className="well">
-                        <h4>Notes</h4>
-                        <hr/>
-                        Mon commentaire.
+                    <div className="descriptif_info_calendar_wrapper">
+                        <Calendar
+                            onChange={this.onChange}
+                            value={this.state.date}
+                        />
+                        <div className="descriptif_document_wrapper">
+                            <div className="descriptif_document_header">
+                                <h4>Documents d'aides à la gestion</h4>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th> Nom du document </th>
+                                        <th> Fichier </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Quittance de loyer</td>
+                                    <td><Link to="#"><span><i className="glyphicon glyphicon-download"></i></span></Link></td>
+                                </tr>
+                                <tr>
+                                    <td>Contrat de location</td>
+                                    <td><Link to="#"><span><i className="glyphicon glyphicon-download"></i></span></Link></td>
+                                </tr>
+                                <tr>
+                                    <td>Avis d'échéance</td>
+                                    <td><Link to="#"><span><i className="glyphicon glyphicon-download"></i></span></Link></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
         }
@@ -266,15 +309,15 @@ class RealEstateView extends React.Component{
                     <h4>Emprunt bancaire : </h4>
                     <hr/>
                     <ul>
-                        <li>{data["mortgage"]["loan_amount"]}</li>
-                        <li>{data["mortgage"]["loan_fees"]}</li>
-                        <li>{data["mortgage"]["loan_waranty_rate"]}</li>
-                        <li>{data["mortgage"]["loan_credit_rate"]}</li>
-                        <li>{data["mortgage"]["loan_total_rate"]}</li>
-                        <li>{data["mortgage"]["loan_duration"]}</li>
-                        <li>{data["mortgage"]["loan_payment_start"]}</li>
-                        <li>{data["mortgage"]["loan_payment_end"]}</li>
-                        <li>{data["mortgage"]["loan_payment_date"]}</li>
+                        <li>{data["mortgages"]["loan_amount"]}</li>
+                        <li>{data["mortgages"]["loan_fees"]}</li>
+                        <li>{data["mortgages"]["loan_waranty_rate"]}</li>
+                        <li>{data["mortgages"]["loan_credit_rate"]}</li>
+                        <li>{data["mortgages"]["loan_total_rate"]}</li>
+                        <li>{data["mortgages"]["loan_duration"]}</li>
+                        <li>{data["mortgages"]["loan_payment_start"]}</li>
+                        <li>{data["mortgages"]["loan_payment_end"]}</li>
+                        <li>{data["mortgages"]["loan_payment_date"]}</li>
                     </ul>
                 </div>
             </div>
@@ -295,14 +338,15 @@ class RealEstateView extends React.Component{
                             <div>
                                 <Button onClick={this.onClickAddEvent}
                                    className="btn btn-default">
-                                    <i className="glyphicon glyphicon-edit"></i>
+                                    <i className="glyphicon glyphicon-new-window"></i>
                                     Ajouter un évènement
                                 </Button>
-                                <Button onClick={this.onClickAddEvent}
-                                   className="btn btn-default">
+                                <Link to={{pathname: '/immobilier/modifier', data: data}}>
+                                    <Button className="btn btn-default">
                                     <i className="glyphicon glyphicon-edit"></i>
-                                    Modification
-                                </Button>
+                                    Modification</Button>
+                                </Link>
+
                                 <Button onClick={this.onClickDeleteBuilding}
                                    className="btn btn-danger">
                                     <i className="glyphicon glyphicon-trash"></i>
@@ -318,7 +362,7 @@ class RealEstateView extends React.Component{
                                 <img src={DefaultImage} alt="Default Image"/>
                             </div>
                             <div className="real_estate_main_description">
-                                <h3>{data["type"]} : {data["city"]}</h3>
+                                <h3>{data["type"].charAt(0).toUpperCase() + data["type"].slice(1)} : {data["city_name"]}</h3>
                                 <hr/>
                                 <div>
                                     <div className="real_estate_qualitative_information">
@@ -328,12 +372,12 @@ class RealEstateView extends React.Component{
                                                 <div className="real_estate_qualitative_information_global_ul">
                                                     <div className="real_estate_qualitative_information_global_ul_wrapper">
                                                         <ul>
-                                                            <li><strong>Prix à l'achat :</strong> {data["value"]}</li>
-                                                            <li><strong>Imposition :</strong> Location Meublé Non Professionnel</li>
+                                                            <li><strong>Prix à l'achat :</strong> {numeral(data["value"]).format('0,0')}</li>
+                                                            <li><strong>Imposition :</strong> {data["tax"]["name"]}</li>
                                                             <li><strong>Adresse :</strong> {data["adress"]}</li>
-                                                            <li><strong>Ville :</strong> {data["city"]}, {data["zipcode"]}</li>
-                                                            <li><strong>Caractéristiques :</strong> T{data["room"]}, {data["surface"]}m²</li>
-                                                            <li><strong>Situation :</strong> Loué jusqu'au 03/03/19</li>
+                                                            <li><strong>Ville :</strong> {data["city_name"]}, {data["zipcode"]}</li>
+                                                            <li><strong>Caractéristiques :</strong> T{data["nb_room"]}, {data["surface"]}m²</li>
+                                                            <li><strong>Fin de location :</strong> {data["tenants"]["contract_end"]}</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -349,13 +393,14 @@ class RealEstateView extends React.Component{
                                                 <li><strong>VAN :</strong> 5</li>
                                             </ul>
                                         </div>
-                                        <div>
-                                            <h4>Évènements</h4>
-                                            <ul>
-                                                <li>Rendez-vous notaire : 05/05/19</li>
-                                                <li>Carrelage : 05/05/19</li>
-                                            </ul>
-                                        </div>
+                                        {/*<div>*/}
+                                            {/*<h4>Évènements</h4>*/}
+                                            {/*<ul>*/}
+                                                {/*{data["events"].map(function(object) {*/}
+                                                    {/*return <li>{object["name_event"]} : {moment(object["start_date"]).format('DD/MM/YYYY')}</li>;*/}
+                                                    {/*})}*/}
+                                            {/*</ul>*/}
+                                        {/*</div>*/}
                                     </div>
                                 </div>
                             </div>
@@ -370,7 +415,7 @@ class RealEstateView extends React.Component{
                         {showInformation}
                     </div>
                 </div>
-                <NewEventModal show={this.state.AddEventModalShow} onHide={modalClose}/>
+                <NewEventModal show={this.state.AddEventModalShow} onHide={modalClose} propertyid={data["id"]}/>
                 <Modal show={this.state.DeleteBuildingModalShow} onHide={modalClose2}>
                     <Modal.Header closeButton>
                         <Modal.Title>Supprimer votre bien immobilier</Modal.Title>

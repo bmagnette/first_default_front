@@ -72,6 +72,23 @@
     margin-bottom: 3%;
 }
 
+.real_estate_details.descriptif{
+    display: flex;
+    width: 100%;
+}
+
+.descriptif_info_wrapper{
+    width: 60%;
+}
+
+.descriptif_info_calendar_wrapper{
+    margin: 0 auto;
+}
+
+.react-calendar{
+    margin: 0 auto;
+}
+
 .real_estate_details .well{
     margin-top: 20px;
 }
@@ -100,4 +117,39 @@
 
 .real_estate_qualitative_information_global_ul_wrapper:nth-child(0){
     margin: 10px;
+}
+
+/* Documents table */
+.descriptif_document_header{
+    background-color: #2A3F52;
+    height: 35px;
+}
+
+.descriptif_document_header h4{
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    margin: 0;
+}
+
+.descriptif_document_wrapper{
+    margin-top : 40px;
+}
+
+.descriptif_document_wrapper table{
+    text-align: center;
+    margin: 0 auto 0;
+    min-width: 200px;
+    width: 350px;
+    box-shadow: 3px 3px 3px 3px grey;
+    border-radius: 0 0 10px 10px;
+}
+
+.descriptif_document_wrapper table th{
+    height: 40px;
+    text-align: center;
+}
+
+.descriptif_document_wrapper table td{
+    height: 35px;
 }

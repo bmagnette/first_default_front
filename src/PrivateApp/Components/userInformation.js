@@ -15,7 +15,7 @@ class UserInformation extends React.Component {
         mobile: '',
         age: '',
         birthday_date: '',
-        city:'',
+        city_name:'',
         address:'',
         postal_code:'',
         gender:'',
@@ -36,7 +36,7 @@ class UserInformation extends React.Component {
             age: user["age"],
             address: user["address"],
             postal_code: user["postal_code"],
-            city: user["city"],
+            city_name: user["city_name"],
             gender: user["gender"],
             isNewsletter: user["isNewsletter"],
             birthday_date: user["birthday_date"]});
@@ -55,9 +55,8 @@ class UserInformation extends React.Component {
         {/*const age = this.state.age;*/}
         const mobile = this.state.mobile;
         const birthday_date = this.state.birthday_date;
-        console.log(birthday_date);
         {/*const gender = this.state.gender;*/}
-        const city = this.state.city;
+        const city = this.state.city_name;
         const postal_code = this.state.postal_code;
         const address = this.state.address;
 
@@ -76,8 +75,7 @@ class UserInformation extends React.Component {
 
         const clickToForm = (variable) =>{
             const id_to_transform = "click_form_"+ variable;
-            console.log(variable);
-            console.log(id_to_transform);
+
             {/*const formHTML = "Hello world";*/}
 
             {/*ReactDOM.render(formHTML, document.getElementById(id_to_transform));*/}

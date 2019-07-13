@@ -8,6 +8,7 @@ import instagram_icon from "../../public/img/instagram.png";
 import linkedin_icon from "../../public/img/social-linkedin-circular-button.png";
 import {FRONT_URL} from "../../constants";
 import '../../public/css/PrivateApp/offers_saas.css';
+import CountUp from 'react-countup';
 
 class IndexPage extends React.Component{
     constructor(props) {
@@ -48,6 +49,20 @@ class IndexPage extends React.Component{
                         <Button className="carousel_button" bsStyle="primary" href={url}>S'enregistrer</Button>
                         {/*<Button className="carousel_button" bsStyle="info" href="#contact_anchor">Nos services</Button>*/}
                     </div>
+                </div>
+            </div>
+            <div className="count_index_count_index_conteneur">
+                <div className="count_index_wrapper">
+                    <h3>Nombre de biens</h3>
+                    <CountUp end={150} duration={5.0}/>
+                </div>
+                <div className="count_index_wrapper">
+                    <h3>Régimes fiscaux disponible</h3>
+                    <CountUp end={12} duration={5.0}/>
+                </div>
+                <div className="count_index_wrapper">
+                    <h3>Nombre de biens illimité </h3>
+                    <CountUp end={150} duration={5.0}/>
                 </div>
             </div>
             {/*<div className="service_explanation_wrapper">*/}

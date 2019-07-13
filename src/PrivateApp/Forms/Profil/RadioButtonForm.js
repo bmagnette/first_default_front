@@ -1,6 +1,6 @@
 import React from 'react';
-import "../../public/css/PublicApp/public_form.css"
-import {BACK_URL} from "../../constants";
+import "../../../public/css/PublicApp/public_form.css"
+import {BACK_URL} from "../../../constants";
 
 class RadioButtonForm extends React.Component{
     constructor(props) {
@@ -9,7 +9,7 @@ class RadioButtonForm extends React.Component{
         const isNewsletterChecked = user["isNewsletter"];
         this.state = {
             isNewsletter: (isNewsletterChecked === 'true'),
-            value: (isNewsletterChecked === 'false'),
+            toogleValue: (isNewsletterChecked === 'false'),
         };
     }
 
@@ -17,13 +17,13 @@ class RadioButtonForm extends React.Component{
         if(this.state.isNewsletter === true){
             this.setState({
                 isNewsletter: false,
-                value: true
+                toogleValue: true
             });
         }
         if(this.state.isNewsletter === false){
             this.setState({
                 isNewsletter: true,
-                value: false
+                toogleValue: false
             });
         }
 
@@ -36,7 +36,7 @@ class RadioButtonForm extends React.Component{
                 'Access-Control-Allow-Origin': '*',
                 'Authorization': localStorage.getItem('TOKEN')},
             body: JSON.stringify({
-                "isNewsletter": this.state.value,
+                "isNewsletter": this.state.toogleValue,
             })})
             .catch(error => {
                 console.log(error["message"]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
 import NotificationSystem from "react-notification-system";
-import {BACK_URL} from "../../constants";
+import {BACK_URL} from "../../../constants/index";
 import {Redirect} from "react-router-dom";
 
 class ChangePasswordForm extends React.Component{

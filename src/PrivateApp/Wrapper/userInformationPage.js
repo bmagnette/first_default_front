@@ -3,8 +3,8 @@ import Header from '../Components/Common/Header';
 import '../../public/css/PrivateApp/Settings.css';
 import SettingsNav from "../Components/Common/SettingsNav";
 import UserInformation from "../Components/userInformation";
-import ChangePasswordForm from "../Forms/ChangePasswordForm";
-import RadioButtonForm from "../Forms/RadioButtonForm";
+import ChangePasswordForm from "../Forms/Profil/ChangePasswordForm";
+import RadioButtonForm from "../Forms/Profil/RadioButtonForm";
 
 
 const UserInformationPage = () => {

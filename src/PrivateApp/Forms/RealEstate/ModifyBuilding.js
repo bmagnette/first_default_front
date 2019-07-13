@@ -2,18 +2,17 @@ import React from 'react';
 import Nav from '../../Components/Common/Nav';
 import Header from '../../Components/Common/Header';
 import {withRouter} from "react-router-dom";
-import AddRealEstateForm from "../../Forms/RealEstate/AddRealEstateForm";
+import AddRealEstateForm from "./MainForm";
 import '../../../public/css/PrivateApp/card.css';
 
-class AddRealEstate extends React.Component{
+class ModifyBuilding extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {
-        }
     }
 
     render(){
+        let { data } = this.props.location;
 
         return (
             <div id="app_container">
@@ -21,7 +20,7 @@ class AddRealEstate extends React.Component{
                 <div id="content_wrapper">
                     <Nav/>
                     <div className="content-right-wrapper">
-                        <AddRealEstateForm/>
+                        <AddRealEstateForm dataToModify={data} title={<h4>Modifier votre bien</h4>}/>
                     </div>
                 </div>
             </div>
@@ -29,4 +28,4 @@ class AddRealEstate extends React.Component{
     }
 }
 
-export default withRouter(AddRealEstate);
+export default withRouter(ModifyBuilding);

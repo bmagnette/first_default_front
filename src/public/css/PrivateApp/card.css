@@ -22,7 +22,7 @@
 .situation_form_wrapper{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -41,15 +41,26 @@
 }
 
 .add_apartment_wrapper{
-    margin-top: 150px;
+    margin-top: 100px;
+}
+
+.glyphicon_cursor{
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+}
+
+.emptyListObject{
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 0 0 10px 10px;
+    padding-left: 25px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
 }
 
 .situation_form_wrapper2{
     display: flex;
-}
-
-.situation_form_wrapper_button{
-    float: right;
 }
 
 .cards_wrapper{
@@ -93,9 +104,9 @@
     height: 150px;
 }
 
-.card_header h3{
+.card_header h4{
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
 
 #dashboard_graphs{
@@ -105,4 +116,119 @@
 
 #dashboard_graphs .recharts-wrapper{
     margin: 0 auto;
+}
+
+.object_list_wrapper{
+    width: 80%;
+    margin: 20px auto 0;
+}
+
+.object_to_add{
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid black;
+    padding-left: 15px;
+}
+
+.object_to_add_wrapper{
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 0 0 10px 10px;
+}
+
+/* ADD APARTMENT */
+
+.add_object_apartment_wrapper{
+    position: relative;
+    width: 70%;
+    margin: 50px auto 0;
+    box-shadow: 3px 3px 3px 3px grey;
+    border-radius: 0 0 10px 10px;
+}
+
+.add_object_apartment_header{
+    background-color: #2A3F52;
+    height: 40px;
+}
+
+.add_object_apartment_header h4{
+    line-height: 40px;
+    color: white;
+    margin: 0 0 0 20px;
+}
+
+.situation_form_wrapper_button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.situation_form_wrapper_button button{
+    margin: 10px;
+}
+
+.add_object_button_wrapper{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.add_object_button_wrapper button{
+    margin: 10px;
+}
+
+.description_form_wrapper{
+    display: flex;
+    width: 100%;
+}
+
+.description_form_wrapper_left{
+    width: 20%;
+    min-width: 200px;
+    padding: 30px;
+}
+
+.description_form_wrapper_right{
+    width: 75%;
+    margin: 0 auto;
+    padding: 30px;
+    border-left: 1px solid grey;
+}
+
+.description_form_wrapper_charges{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.description_form_wrapper_formgroup{
+    display: flex;
+}
+
+.description_form_wrapper_formgroup .form-control, .description_form_wrapper_formgroup .control-label, .description_form_wrapper_formgroup .select_form{
+    margin-left: 50px;
+}
+
+.float_form_size .form-control{
+    width: 150px;
+}
+
+.select_form{
+    display: block;
+    margin: 0 auto;
+}
+
+.text_form_size .form-control{
+    width: 190px;
+}
+
+.description_form_wrapper_charges_part{
+    width: 33%;
+}
+
+.select_form{
+    text-align: center;
+    cursor: pointer;
+    height: 35px;
+    margin-right: 0;
 }

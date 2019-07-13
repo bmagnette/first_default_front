@@ -18,7 +18,6 @@ class SignInForm extends React.Component{
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.ShowDialog = this.ShowDialog.bind(this);
     }
 
@@ -42,7 +41,7 @@ class SignInForm extends React.Component{
         fetch(BACK_URL + 'auth/connexion/login', {
             method: 'POST',
             headers: new Headers({
-                'Authorization': 'Basic '+ btoa(this.state.email+':'+this.state.password),
+                'Authorization': 'Basic '+ btoa(this.state.email + ':' + this.state.password),
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -55,7 +54,6 @@ class SignInForm extends React.Component{
                 this.setState({ redirectToNewPage: true});
             })
             .catch(response  => {
-                console.log(response.status);
                 if(response.status === 400){this._addNotification("Identifiant incorrect", "error")}
                 if(response.status === 401){this.setState({ showisConfirmed: true})}
                 if(response.status === 405){

@@ -52,7 +52,10 @@
 }
 
 .add_real_estate_form_wrapper{
+    position: relative;
     margin: 50px;
+    min-height: 80vh;
+    height: 80vh;
 }
 
 .account_settings_information_frame{

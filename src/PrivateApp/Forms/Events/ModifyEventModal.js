@@ -1,5 +1,5 @@
 import React from 'react';
-import {BACK_URL} from "../../constants";
+import {BACK_URL} from "../../../constants/index";
 import DatePicker from 'react-datepicker';
 import TimePicker from 'rc-time-picker';
 import moment from 'moment';
@@ -10,6 +10,7 @@ class ModifyEventModal extends React.Component {
     constructor(props) {
         let m = moment().utcOffset(0);
         m.set({hour:0,minute:0,second:0,millisecond:0});
+
         super(props);
         this.state = {
             id: null,
@@ -21,9 +22,8 @@ class ModifyEventModal extends React.Component {
             hour_event: m,
             duration_event: m,
             allDay: true,
+            event_type: ""
         };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChangeCalendar = (event_date) => {
@@ -33,9 +33,13 @@ class ModifyEventModal extends React.Component {
     };
 
     componentDidMount() {
+
+        let startDate = new Date(this.props.eventclickedinfo.start_date);
+        let endDate = new Date(this.props.eventclickedinfo.end_date);
+
         this._notificationSystem = this.refs.notificationSystem;
         let m = moment();
-        m.set({hour:0,minute:this.props.eventclickedinfo.duration,second:0,millisecond:0});
+        m.set({hour:0,minute:this.props.eventclickedinfo.duration, second:0,millisecond:0});
 
         let m2 = moment(this.props.eventclickedinfo.hour);
 
@@ -43,16 +47,17 @@ class ModifyEventModal extends React.Component {
                 id: this.props.eventclickedinfo.id,
                 title: this.props.eventclickedinfo.title,
                 description: this.props.eventclickedinfo.description,
-                start_date: this.props.eventclickedinfo.start_date,
-                end_date: this.props.eventclickedinfo.end_date,
+                start_date: startDate,
+                end_date: endDate,
                 hour_event: m2,
                 duration_event: m,
-
-            location: this.props.eventclickedinfo.location,
+                location: this.props.eventclickedinfo.location,
                 allDay: this.props.eventclickedinfo.isAllDay,
+                event_type: this.props.eventclickedinfo.event_type
             });
-        console.log(this.state.start_date);
-    };
+
+        console.log(this.props.eventclickedinfo.isAllDay);
+        };
 
     _addNotification = (message, level) => {
         this._notificationSystem.addNotification({
@@ -87,7 +92,8 @@ class ModifyEventModal extends React.Component {
                 "event_date": this.state.start_date,
                 "hour_event": this.state.hour_event,
                 "duration": this.state.duration_event,
-                "isAllDay": this.state.allDay
+                "isAllDay": this.state.allDay,
+                "event_type": this.state.event_type
             })
         })
             .catch(error => {
@@ -126,7 +132,7 @@ class ModifyEventModal extends React.Component {
     };
 
     handleChangeCheckBox = (event) => {
-        this.setState({isAllDay: event.target.checked});
+        this.setState({allDay: event.target.checked});
     };
 
     handleChange = (event) => {
@@ -135,14 +141,9 @@ class ModifyEventModal extends React.Component {
         this.setState({[field_name]: field_Val});
     };
 
-    toggleModal = () => {
-        console.log("TEST");
-        document.getElementById("add_event_form").reset();
-    };
-
     render() {
         let htmlHiden;
-        if (this.state.isAllDay === true) {
+        if (this.state.allDay === true) {
             htmlHiden = <div></div>
         }
         else {
@@ -210,6 +211,15 @@ class ModifyEventModal extends React.Component {
                                 <FormControl required type="text" name="location_event" defaultValue={this.state.location} onChange={this.handleChange}/>
                                 <FormControl.Feedback/>
                             </FormGroup>
+                            <FormGroup controlId="formValidationSuccess3">
+                                <Label>Type d'évènements</Label>
+                                <br/>
+                                <select defaultValue={this.state.event_type} onChange={this.handleChange} placeholder="Type d'évènements">
+                                    <option key={"option_" + "Travaux"} value="Travaux" name={"Travaux"}>Travaux</option>
+                                    <option key={"option_" + "Visite"} value="Visite" name={"Visite"}>Travaux</option>
+                                    <option key={"option_" + "Notaire"} value="Notaire" name={"Notaire"}>Notaire</option>
+                                </select>
+                            </FormGroup>
                             <div className="daily_event_form_wrapper">
                                 <FormGroup className="daily_event_form" controlId="formValidationSuccess1">
                                     <Label>Date</Label>
@@ -219,7 +229,7 @@ class ModifyEventModal extends React.Component {
                                 </FormGroup>
                                 <FormGroup className="daily_event_form" id="formGridCheckbox">
                                     <Label>Evènement d'une journée</Label>
-                                    <Checkbox type="checkbox" checked={this.state.isAllDay}
+                                    <Checkbox type="checkbox" checked={this.state.allDay}
                                               onChange={this.handleChangeCheckBox}/>
                                 </FormGroup>
                             </div>

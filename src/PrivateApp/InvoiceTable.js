@@ -33,7 +33,6 @@ class InvoiceTable extends React.Component{
 
     render(){
         const payment_data = this.state.payment_data;
-        console.log(payment_data.length);
         let res = [];
         if(payment_data.length !== 0){
             Object.keys(payment_data).forEach(function(key) {

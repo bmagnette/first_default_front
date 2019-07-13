@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from '../Components/Common/Nav';
-import Header from '../Components/Common/Header';
-import '../../public/css/PrivateApp/calendar.css';
+import Nav from '../../Components/Common/Nav';
+import Header from '../../Components/Common/Header';
+import '../../../public/css/PrivateApp/calendar.css';
 import 'rc-time-picker/assets/index.css';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -9,8 +9,8 @@ import bootstrapPlugin from '@fullcalendar/bootstrap';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import momentTimezonePlugin from '@fullcalendar/moment-timezone';
 
-import NewEventModal from '../Components/NewEventModal';
-import ModifyEventModal from "../Components/ModifyEventModal";
+import NewEventModal from '../../Forms/Events/NewEventModal';
+import ModifyEventModal from "../../Forms/Events/ModifyEventModal";
 
 class CalendarPage extends React.Component {
     constructor(props) {
@@ -37,7 +37,6 @@ class CalendarPage extends React.Component {
             let is_all_day = user["events_calendar"][myIndex]["isAllDay"];
             let name_event = user["events_calendar"][myIndex]["name_event"];
 
-            console.log({"id": id, "title": name_event, "start": start_date, "end": end_date, "allDay": is_all_day});
             let res_dict = {"id": id, "title": name_event, "start": start_date, "end": end_date, "allDay": is_all_day};
             res_list.push(res_dict);
         }
@@ -54,10 +53,11 @@ class CalendarPage extends React.Component {
     };
 
     render() {
-        let modalClose = () => this.setState({AddEventModalShow: false});
+        let modalClose = () => this.setState({modalShow: false});
 
         let modifyEvent = <div></div>;
         if (this.state.eventclicked) {
+            console.log(this.state);
             modifyEvent = <ModifyEventModal show={this.state.modalShow2} onHide={this.onHide} eventclickedinfo={this.state.eventclickedInfo}/>
         }
 
@@ -105,7 +105,7 @@ class CalendarPage extends React.Component {
                                           add_event: {
                                               text: 'Ajouter un évènement',
                                               click: function () {
-                                                  this.setState({AddEventModalShow: true})}.bind(this)}}}
+                                                  this.setState({modalShow: true})}.bind(this)}}}
                         />
                     </div>
                 </div>

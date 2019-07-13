@@ -5,7 +5,7 @@ import SubscribePage from "./PublicApp/Wrapper/SubscribePage";
 import SignInPage from "./PublicApp/Wrapper/SignInPage";
 import PasswordResetPage from "./PublicApp/Wrapper/PasswordResetPage";
 import PasswordResetPasswordPage from './PublicApp/Wrapper/PasswordResetPasswordPage'
-import CalendarPage from "./PrivateApp/Wrapper/CalendarPage";
+import CalendarPage from "./PrivateApp/Wrapper/Calendar/CalendarPage";
 import UserInformationPage from "./PrivateApp/Wrapper/userInformationPage";
 import AdminPage from "./AdminApp/AdminPage";
 import AuthenticatedRoute from "./PrivateApp/AuthenticatedRoute";
@@ -13,7 +13,8 @@ import AdminRoute from "./AdminApp/AdminRoute";
 import DashboardPage from "./PrivateApp/Wrapper/DashboardPage";
 import SimulatorRealEstate from "./PrivateApp/Wrapper/RealEstate/SimulatorRealEstate";
 import RealEstatePage from "./PrivateApp/Wrapper/RealEstate/RealEstatePage";
-import AddRealEstate from "./PrivateApp/Wrapper/RealEstate/AddRealEstate";
+import AddRealEstate from "./PrivateApp/Forms/RealEstate/AddRealEstate";
+import ModifyBuilding from "./PrivateApp/Forms/RealEstate/ModifyBuilding";
 import ProfilPage from "./PrivateApp/Wrapper/ProfilPage";
 import SettingOffersPage from "./PrivateApp/Wrapper/SettingOffersPage";
 import RealEstateView from "./PrivateApp/Wrapper/RealEstate/RealEstateView";
@@ -40,6 +41,7 @@ const RouterExample = () => (
             <AuthenticatedRoute exact path="/dashboard" component={DashboardPage}/>
             <AuthenticatedRoute exact path="/immobilier" component={RealEstatePage}/>
             <AuthenticatedRoute exact path="/immobilier/ajouter" component={AddRealEstate}/>
+            <AuthenticatedRoute exact path="/immobilier/modifier" component={ModifyBuilding}/>
             <AuthenticatedRoute exact path="/immobilier/view" component={RealEstateView}/>
 
 

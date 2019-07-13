@@ -68,7 +68,6 @@ class SettingOffersPage extends React.Component{
                 window.location.href = redirect_url
             )
         }
-        console.log("Props", this.props);
         if(this.props.paymentCheck){
             this.handlePayment()
         }

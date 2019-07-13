@@ -1,18 +1,19 @@
 import React from 'react';
 import Nav from '../../Components/Common/Nav';
 import Header from '../../Components/Common/Header';
-import {Button} from 'react-bootstrap';
 import {withRouter} from "react-router-dom";
+import {Clearfix, Button, MenuItem, DropdownButton, Dropdown} from 'react-bootstrap';
 import '../../../public/css/PrivateApp/card.css';
 import DefaultImage from '../../../public/img/default_house.jpg';
 import {Link} from 'react-router-dom';
-
+import numeral from "numeral";
 
 class RealEstatePage extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            selectionProperties: "",
             properties: [],
         }
     }
@@ -27,7 +28,7 @@ class RealEstatePage extends React.Component{
         let html = <div></div>;
         let propertiesList = user["properties"];
 
-        if(propertiesList === undefined){
+        if(propertiesList.length === 0){
             html = <div className="cards_wrapper">
                 <div className="default_card">
                     <div className="card_wrapper">
@@ -35,7 +36,7 @@ class RealEstatePage extends React.Component{
                             <img src={DefaultImage} alt="Home"/>
                         </div>
                         <div className="card_header">
-                            <h4><strong>Veuillez ajouter vos biens</strong></h4>
+                            <h4><strong>Ajouter votre premier bien.</strong></h4>
                         </div>
                         <ul>
                             <li>Test</li>
@@ -51,23 +52,27 @@ class RealEstatePage extends React.Component{
             html =
                 <div className="cards_wrapper">
                     {propertiesList.map(function(object) {
-                        return(<Link to={{pathname:"/immobilier/view", data: object}}>
-                        <div className="card_wrapper">
-                            <div className="card_picture">
-                                <img src={DefaultImage} alt="Default"/>
+                        return(<div key={"property_card_" + object["id"]}>
+                            <Link to={{pathname:"/immobilier/view", data: object}}>
+                            <div className="card_wrapper">
+                                <div className="card_picture">
+                                    <img src={DefaultImage} alt="Default"/>
+                                </div>
+                                <div className="card_header">
+                                    <h4>{object["city_name"]} - {object["adress"]}</h4>
+                                </div>
+                                <ul>
+                                    <li>Valorisation : {numeral(object["value"]).format("0,0")}</li>
+                                    <li>Rendement brut: {object["yield"]["BRUT"]}%</li>
+                                    <li>Rendement net : {object["yield"]["NET"]}%</li>
+                                    <li>Liquidité : {object["yield"]["CASH"]}</li>
+                                    <li>Caractéristiques : T{object["nb_room"]} - {object["surface"]}m²</li>
+                                </ul>
+                                <div>
+                                </div>
                             </div>
-                            <div className="card_header">
-                                <h3>{object["city"]} : <br/>{object["adress"]}</h3>
-                            </div>
-                            <ul>
-                                <li>Valorisation : {object["price"]}</li>
-                                <li>Rendement : </li>
-                                <li>Caractéristiques : T{object["room"]} - {object["surface"]}m²</li>
-                            </ul>
-                            <div>
-                            </div>
-                        </div>
-                            </Link>)
+                                </Link>
+                        </div>)
                     })}
 
                 </div>
@@ -79,6 +84,17 @@ class RealEstatePage extends React.Component{
                 <div id="content_wrapper">
                     <Nav/>
                     <div className="content-right-wrapper2">
+                        {/*<Dropdown>*/}
+                            {/*<Dropdown.Toggle variant="success" id="dropdown-basic">*/}
+                                {/*Dropdown Button*/}
+                            {/*</Dropdown.Toggle>*/}
+
+                            {/*<Dropdown.Menu>*/}
+                                {/*<Dropdown.Item href="#/action-1">Action</Dropdown.Item>*/}
+                                {/*<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>*/}
+                                {/*<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>*/}
+                            {/*</Dropdown.Menu>*/}
+                        {/*</Dropdown>*/}
                         <Button onClick={this.handleClick}>Ajouter un bien</Button>
                         {html}
                     </div>
