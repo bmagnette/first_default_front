@@ -27,3 +27,8 @@
 .modal-footer{
     text-align: center;
 }
+
+.center_element{
+    text-align: center;
+    margin: 15px auto;
+}

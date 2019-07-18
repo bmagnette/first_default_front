@@ -7,17 +7,20 @@ import {Link, Redirect} from "react-router-dom";
 import DefaultImage from '../../../public/img/default_house.jpg';
 import {Button, Modal} from 'react-bootstrap';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
-import NewEventModal from '../../Forms/Events/NewEventModal';
+import EventModal from '../../Forms/Events/EventModal';
 import {BACK_URL} from "../../../constants";
 import numeral from "numeral";
-import moment from 'moment';
 import Calendar from 'react-calendar';
 import PdfIcon from '../../../public/img/icons/file_pdf2.png';
+import moment from 'moment';
 
 class RealEstateView extends React.Component{
 
     constructor(props){
         super(props);
+        let m = moment().utcOffset(0);
+        m.set({hour:0,minute:0,second:0,millisecond:0});
+
         this.state = {
             date: new Date(),
             showGraphics: false,
@@ -26,7 +29,16 @@ class RealEstateView extends React.Component{
             showDebt: false,
             AddEventModalShow: false,
             DeleteBuildingModalShow: false,
-            redirect: false
+            redirect: false,
+
+            event_date: new Date(),
+            name_event: "",
+            description_event: "",
+            location_event: "",
+            hour_event: m,
+            duration_event: m,
+            isAllDay: false,
+            event_type: "sans"
         }
     }
 
@@ -60,10 +72,6 @@ class RealEstateView extends React.Component{
         });
     };
 
-    onHide = () =>  {
-        this.setState({DeleteBuildingModalShow: false})
-    };
-
     DeleteBuilding = () => {
         let { data } = this.props.location;
         fetch(BACK_URL + 'real_estate/property/delete/' + data["id"], {
@@ -87,14 +95,80 @@ class RealEstateView extends React.Component{
         this.setState({DeleteBuildingModalShow: false, redirect: true});
     };
 
+    handleSubmit = (event) => {
+        if(this.state.isAllDay === true){
+            let date = this.state.event_date;
+            date.setDate(date.getDate() + 1 );
+            date.setHours(0);
+            date.setMinutes(0);
+            date.setSeconds(0);
+            this.setState({event_date: date});
+        }
+
+        fetch(BACK_URL + 'calendar/create', {
+            method: 'POST',
+            headers: {
+                'Authorization': localStorage.getItem('TOKEN'),
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+                "name_event": this.state.name_event,
+                "description_event": this.state.description_event,
+                "location_event": this.state.location_event,
+                "event_date": this.state.event_date,
+                "hour_event": this.state.hour_event,
+                "duration": this.state.duration_event,
+                "isAllDay": this.state.isAllDay,
+                "property_id": this.state.propertyid,
+                "event_type": this.state.event_type
+            })
+        })
+            .catch(error => {
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(response => {
+                this.setInitialState();
+            });
+        event.preventDefault();
+        this.onHide();
+    };
+
+    handleChange = (event) => {
+        let field_name = event.target.name;
+        let field_Val = event.target.value;
+        this.setState({[field_name]: field_Val});
+    };
+
+    handleChangeCalendar = (event_date) => {
+        this.setState({
+            event_date: event_date
+        });
+    };
+
+    handleChangeOption = (event) => {
+        this.setState({event_type: event.target.value})
+    };
+
+    handleChangeCheckBox = (event) => {
+        this.setState({isAllDay: event.target.checked});
+    };
+
     render(){
         let showInformation;
         let modalClose = () => this.setState({AddEventModalShow: false});
         let modalClose2 = () => this.setState({DeleteBuildingModalShow: false});
 
-        const { data } = this.props.location;
+        const { eventId, data } = this.props.location;
 
-        if(data === undefined){
+        const { event_date, name_event, description_event, location_event, hour_event, duration_event, isAllDay, event_type } = this.state;
+        const values = { event_date, name_event, description_event, location_event, hour_event, duration_event, isAllDay, event_type };
+
+        console.log(values);
+        if(this.props.location.data === undefined){
             return <Redirect to='/immobilier'/>;
         }
 
@@ -415,7 +489,7 @@ class RealEstateView extends React.Component{
                         {showInformation}
                     </div>
                 </div>
-                <NewEventModal show={this.state.AddEventModalShow} onHide={modalClose} propertyid={data["id"]}/>
+                <EventModal title={"Ajouter un évènement"} buttonTitle="Ajouter" show={this.state.AddEventModalShow} onHide={modalClose} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete} eventInfo={values} handleChangeOption={this.handleChangeOption} handleChangeCheckBox={this.handleChangeCheckBox} handleChange={this.handleChange} onChangeMinute={this.onChangeMinute} onChangeHour={this.onChangeHour} handleChangeCalendar={this.handleChangeCalendar}/>
                 <Modal show={this.state.DeleteBuildingModalShow} onHide={modalClose2}>
                     <Modal.Header closeButton>
                         <Modal.Title>Supprimer votre bien immobilier</Modal.Title>

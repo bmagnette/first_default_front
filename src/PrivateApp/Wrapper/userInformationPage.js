@@ -5,9 +5,10 @@ import SettingsNav from "../Components/Common/SettingsNav";
 import UserInformation from "../Components/userInformation";
 import ChangePasswordForm from "../Forms/Profil/ChangePasswordForm";
 import RadioButtonForm from "../Forms/Profil/RadioButtonForm";
-
+import FinancialInfoForm from "../Forms/Profil/FinancialInfoForm";
 
 const UserInformationPage = () => {
+
 
     return (
         <div id="app_container">
@@ -39,6 +40,14 @@ const UserInformationPage = () => {
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    <div className="account_settings_information_frame">
+                        <div className="account_settings_information_frame_header">
+                            <h4>Informations financières</h4>
+                        </div>
+                        <div className="private_form_wrapper">
+                            <FinancialInfoForm/>
                         </div>
                     </div>
                 </div>

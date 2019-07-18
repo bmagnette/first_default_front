@@ -11,7 +11,7 @@ const DashboardPage = () => {
 
     const user = JSON.parse(localStorage.getItem('USER'));
     let stats = user["global_info"];
-
+    let currentTenant = user["current_tenants"];
     const data2 = [
         {
             name: '21/05/2019', actual: 0, estimated: 0,
@@ -35,29 +35,21 @@ const DashboardPage = () => {
             name: '27/05/2019', actual: 0, estimated: 0,
         },
     ];
-    const data = [{
-        name: 'Tanner Linsley',
-        age: 26,
-        friend: {
-            name: 'Jason Maurer',
-            age: 23,
-        }
-    }];
-    const columns = [{
-        Header: 'Name',
-        accessor: 'name' // String-based value accessors!
-    }, {
-        Header: 'Age',
-        accessor: 'age',
-        Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    }, {
-        id: 'friendName', // Required because our accessor is not a string
-        Header: 'Friend Name',
-        accessor: d => d.friend.name // Custom value accessors!
-    }, {
-        Header: props => <span>Friend Age</span>, // Custom header components!
-        accessor: 'friend.age'
-    }];
+
+    let dataTenants = [];
+    for (let i = 0; i < currentTenant.length; i++) {
+        let tempDict = {"nom": currentTenant[i]["last_name"], "prenom": currentTenant[i]["first_name"], "mobile":  currentTenant[i]["mobile"],
+        "finContrat":  currentTenant[i]["contract_end"]};
+        dataTenants.push(tempDict);
+    }
+
+    if(currentTenant.length === 0 ){
+        let tempDict = {"nom": "Veuillez ajouter des locataires", "prenom": "", "mobile":  "",
+            "finContrat":  ""};
+        dataTenants.push(tempDict);
+    }
+
+    const columns = [{Header: 'Nom', accessor: 'nom'}, {Header: 'Prénom', accessor: 'prenom'}, {Header: 'Téléphone', accessor: 'mobile'}, {Header: "Fin de contrat", accessor: 'finContrat'}];
 
     return (
         <div id="app_container">
@@ -79,7 +71,7 @@ const DashboardPage = () => {
                             </LineChart>
                         </div>
                         <ReactTable
-                            data={data}
+                            data={dataTenants}
                             columns={columns}
                         />
                     </div>

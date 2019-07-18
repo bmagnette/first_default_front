@@ -16,6 +16,9 @@ import RealEstatePage from "./PrivateApp/Wrapper/RealEstate/RealEstatePage";
 import AddRealEstate from "./PrivateApp/Forms/RealEstate/AddRealEstate";
 import ModifyBuilding from "./PrivateApp/Forms/RealEstate/ModifyBuilding";
 import ProfilPage from "./PrivateApp/Wrapper/ProfilPage";
+import TenantPage from "./PrivateApp/Wrapper/TenantPage";
+import ContactPage from "./PrivateApp/Wrapper/ContactPage";
+import DocumentPage from "./PrivateApp/Wrapper/DocumentPage";
 import SettingOffersPage from "./PrivateApp/Wrapper/SettingOffersPage";
 import RealEstateView from "./PrivateApp/Wrapper/RealEstate/RealEstateView";
 {/*
@@ -43,10 +46,10 @@ const RouterExample = () => (
             <AuthenticatedRoute exact path="/immobilier/ajouter" component={AddRealEstate}/>
             <AuthenticatedRoute exact path="/immobilier/modifier" component={ModifyBuilding}/>
             <AuthenticatedRoute exact path="/immobilier/view" component={RealEstateView}/>
-
-
+            <AuthenticatedRoute exact path="/locataires" component={TenantPage}/>
+            <AuthenticatedRoute exact path="/contact" component={ContactPage}/>
+            <AuthenticatedRoute exact path="/documents" component={DocumentPage}/>
             <AuthenticatedRoute exact path="/simulation" component={SimulatorRealEstate}/>
-
             <AuthenticatedRoute exact path="/calendar" component={CalendarPage}/>
             {/*<AuthenticatedRoute exact path="/produits" component={ProductPage}/>*/}
 

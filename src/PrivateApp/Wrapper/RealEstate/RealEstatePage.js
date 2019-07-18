@@ -53,7 +53,7 @@ class RealEstatePage extends React.Component{
                 <div className="cards_wrapper">
                     {propertiesList.map(function(object) {
                         return(<div key={"property_card_" + object["id"]}>
-                            <Link to={{pathname:"/immobilier/view", data: object}}>
+                            <Link to={{pathname:"/immobilier/view", data: object, eventId: object["id"]}}>
                             <div className="card_wrapper">
                                 <div className="card_picture">
                                     <img src={DefaultImage} alt="Default"/>
