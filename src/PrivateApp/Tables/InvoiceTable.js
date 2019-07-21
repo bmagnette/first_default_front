@@ -1,7 +1,7 @@
 import React from 'react';
-import '../public/css/PrivateApp/Streamer.css';
+import '../../public/css/PrivateApp/Streamer.css';
 import ReactTable from "react-table";
-import {BACK_URL} from "../constants";
+import {BACK_URL} from "../../constants";
 
 class InvoiceTable extends React.Component{
     constructor(props) {

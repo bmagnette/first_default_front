@@ -1,7 +1,8 @@
 import React from 'react';
 import Nav from '../Components/Common/Nav';
 import Header from '../Components/Common/Header';
-import '../../public/css/PrivateApp/card.css';
+import '../../public/css/PrivateApp/contactPage.css';
+import ContactForm from "../Forms/Contact/ContactForm";
 
 
 const ContactPage = () => {
@@ -11,10 +12,11 @@ const ContactPage = () => {
             <div id="content_wrapper">
                 <Nav/>
                 <div className="content-right-wrapper">
-                    <div className="section_title">
-                        <h3>Investissement Immobilier</h3>
+                    <div className="contact_form_title">
+                        <h3>Application NAME support</h3>
+                        <p>Nous sommes là pour répondre à vos questions.</p>
                     </div>
-
+                    <ContactForm/>
                 </div>
             </div>
         </div>

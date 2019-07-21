@@ -28,11 +28,11 @@ const Nav = () => {
                             <Link to="/calendar">
                                 <li><span className="glyphicon glyphicon-calendar"></span>Calendrier</li>
                             </Link>
-                            <Link to="/artisans">
-                                <li><span className="glyphicon glyphicon-list-alt"></span>Artisans</li>
-                            </Link>
+                            {/*<Link to="/artisans">*/}
+                                {/*<li><span className="glyphicon glyphicon-list-alt"></span>Artisans</li>*/}
+                            {/*</Link>*/}
                             <Link to="/contact">
-                                <li><span className="glyphicon glyphicon-envelope"></span>Contactez-nous</li>
+                                <li><span className="glyphicon glyphicon-envelope"></span>Support</li>
                             </Link>
                             {/*<Link to="/produits">
                             <li>

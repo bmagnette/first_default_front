@@ -114,6 +114,29 @@
     margin-top: 50px;
 }
 
+.dashboard_wrapper{
+    display: flex;
+    width: 100%;
+}
+
+.event_table_wrapper{
+    width: 100%;
+    margin: 20px;
+}
+
+.dashboard_wrapper .event_table{
+    width: 75%;
+    margin: 0 auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+.dashboard_wrapper .event_table td, .dashboard_wrapper .event_table th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
 #dashboard_graphs .recharts-wrapper{
     margin: 0 auto;
 }

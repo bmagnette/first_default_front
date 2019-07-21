@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../Components/Common/Header';
-import '../../public/css/PrivateApp/Settings.css';
-import SettingsNav from "../Components/Common/SettingsNav";
+import Header from '../../Components/Common/Header';
+import '../../../public/css/PrivateApp/Settings.css';
+import SettingsNav from "../../Components/Common/SettingsNav";
 import {Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis,} from 'recharts';
 
 

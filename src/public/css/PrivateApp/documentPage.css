@@ -1,0 +1,22 @@
+.document_page_wrapper{
+    width: 90%;
+    margin: 40px;
+}
+
+.document_page_wrapper .document_page_header{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.document_page_list_wrapper{
+    margin: 40px;
+}
+
+.document_page_list_wrapper h5{
+    font-weight: 600;
+}
+
+.document_page_list_wrapper ul{
+    text-decoration: none;
+    list-style-type: none;
+}

@@ -4,7 +4,7 @@ import SettingsNav from "../Components/Common/SettingsNav";
 import '../../public/css/PrivateApp/offers_saas.css';
 import {Button} from "react-bootstrap";
 import {BACK_URL, USER_TYPE} from "../../constants";
-import InvoiceTable from "../InvoiceTable";
+import InvoiceTable from "../Tables/InvoiceTable";
 import spaceShip from "../../public/img/space-ship.png";
 import plane from "../../public/img/plane.png";
 import paperplane from "../../public/img/paper-plane.png";

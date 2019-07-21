@@ -1,15 +1,17 @@
 #streamer_wrapper{
     display: flex;
+}
+
+.streamer_parent_wrapper{
     width: 90%;
-    height: 100px;
-    min-height: 100px;
     margin: 20px auto 0;
     justify-content: space-around;
     box-shadow: 3px 3px 3px 3px grey;
+    border-radius: 0 0 10px 10px;
 }
 
 .streamer_element{
-    height: 100px;
+    padding-bottom: 15px;
     width : 120px;
     margin : 0 auto;
     text-align: center;
@@ -17,4 +19,9 @@
 
 .ReactTable{
     text-align: center;
+}
+
+.streamer_header{
+    background-color: #2A3F52;
+    height: 10px;
 }

@@ -211,6 +211,9 @@ class CalendarPage extends React.Component {
         else{
             conditionalModal = <EventModal title={"Ajouter un évènement"} buttonTitle="Ajouter" show={this.state.modalShow} onHide={this.onHide} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete} eventInfo={values} handleChangeOption={this.handleChangeOption} handleChangeCheckBox={this.handleChangeCheckBox} handleChange={this.handleChange} onChangeMinute={this.onChangeMinute} onChangeHour={this.onChangeHour} handleChangeCalendar={this.handleChangeCalendar}/>
         }
+
+        let m = moment().utcOffset(0);
+        m.set({hour:0,minute:0,second:0,millisecond:0});
         return (
             <div id="app_container">
                 <Header/>
@@ -257,7 +260,14 @@ class CalendarPage extends React.Component {
                                           right: 'prev,next'}}
                                       customButtons={{
                                           add_event: {
-                                              text: 'Ajouter un évènement', click: function () {this.setState({modalShow: true, eventClicked: false})}.bind(this)}}}
+                                              text: 'Ajouter un évènement', click: function () {this.setState({modalShow: true, eventClicked: false,             event_date: new Date(),
+                                                  name_event: "",
+                                                  description_event: "",
+                                                  location_event: "",
+                                                  hour_event: m,
+                                                  duration_event: m,
+                                                  isAllDay: false,
+                                                  event_type: "sans"})}.bind(this)}}}
                         />
                     </div>
                 </div>
