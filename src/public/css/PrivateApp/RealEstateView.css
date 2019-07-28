@@ -60,10 +60,6 @@
     margin: 20px;
 }
 
-.real_estate_button_header{
-    display: flex;
-}
-
 .real_estate_button .btn{
     margin: 10px;
 }
@@ -140,12 +136,15 @@
     margin-top : 40px;
 }
 
+.descriptif_document_wrapper_table{
+    width: 30%;
+}
+
 .descriptif_document_wrapper table{
     text-align: center;
     margin: 0 auto 0;
-    min-width: 200px;
-    width: 350px;
-    box-shadow: 3px 3px 3px 3px grey;
+    width: 100%;
+    box-shadow: 3px 3px 3px grey;
     border-radius: 0 0 10px 10px;
 }
 

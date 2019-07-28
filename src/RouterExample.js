@@ -21,6 +21,7 @@ import ContactPage from "./PrivateApp/Wrapper/ContactPage";
 import DocumentPage from "./PrivateApp/Wrapper/DocumentPage";
 import SettingOffersPage from "./PrivateApp/Wrapper/SettingOffersPage";
 import RealEstateView from "./PrivateApp/Wrapper/RealEstate/RealEstateView";
+import TenantProfil from "./PrivateApp/Wrapper/Tenants/TenantProfil";
 {/*
 import ProductPage from "./PrivateApp/Wrapper/ProductPage";
 import PricingPage from "./PublicApp/Wrapper/PricingPage";
@@ -28,40 +29,41 @@ import ServicesPage from "./PublicApp/Wrapper/ServicesPage"; */}
 
 const RouterExample = () => (
 
-        <div>
-            {/* Presentation */}
-            <Route exact path="/" component={IndexPage}/>
-            {/* <Route exact path="/tarification" component={PricingPage}/>
+    <div>
+        {/* Presentation */}
+        <Route exact path="/" component={IndexPage}/>
+        {/* <Route exact path="/tarification" component={PricingPage}/>
             <Route exact path="/services" component={ServicesPage}/>*/}
 
-            {/* Public member */}
-            <Route exact path="/susbcribe" component={SubscribePage}/>
-            <Route exact path="/signin" component={SignInPage}/>
-            <Route exact path="/new_password_request" component={PasswordResetPage}/>
-            <Route exact path="/reset_password" component={PasswordResetPasswordPage}/>
+        {/* Public member */}
+        <Route exact path="/susbcribe" component={SubscribePage}/>
+        <Route exact path="/signin" component={SignInPage}/>
+        <Route exact path="/new_password_request" component={PasswordResetPage}/>
+        <Route exact path="/reset_password" component={PasswordResetPasswordPage}/>
 
-            {/* Private member */}
-            <AuthenticatedRoute exact path="/dashboard" component={DashboardPage}/>
-            <AuthenticatedRoute exact path="/immobilier" component={RealEstatePage}/>
-            <AuthenticatedRoute exact path="/immobilier/ajouter" component={AddRealEstate}/>
-            <AuthenticatedRoute exact path="/immobilier/modifier" component={ModifyBuilding}/>
-            <AuthenticatedRoute exact path="/immobilier/view" component={RealEstateView}/>
-            <AuthenticatedRoute exact path="/locataires" component={TenantPage}/>
-            <AuthenticatedRoute exact path="/contact" component={ContactPage}/>
-            <AuthenticatedRoute exact path="/documents" component={DocumentPage}/>
-            <AuthenticatedRoute exact path="/simulation" component={SimulatorRealEstate}/>
-            <AuthenticatedRoute exact path="/calendar" component={CalendarPage}/>
-            {/*<AuthenticatedRoute exact path="/produits" component={ProductPage}/>*/}
+        {/* Private member */}
+        <AuthenticatedRoute exact path="/dashboard" component={DashboardPage}/>
+        <AuthenticatedRoute exact path="/immobilier" component={RealEstatePage}/>
+        <AuthenticatedRoute exact path="/immobilier/ajouter" component={AddRealEstate}/>
+        <AuthenticatedRoute exact path="/immobilier/modifier" component={ModifyBuilding}/>
+        <AuthenticatedRoute exact path="/immobilier/view" component={RealEstateView}/>
+        <AuthenticatedRoute exact path="/locataire" component={TenantPage}/>
+        <AuthenticatedRoute exact path="/locataire/view" component={TenantProfil}/>
+        <AuthenticatedRoute exact path="/contact" component={ContactPage}/>
+        <AuthenticatedRoute exact path="/documents" component={DocumentPage}/>
+        <AuthenticatedRoute exact path="/simulation" component={SimulatorRealEstate}/>
+        <AuthenticatedRoute exact path="/calendar" component={CalendarPage}/>
+        {/*<AuthenticatedRoute exact path="/produits" component={ProductPage}/>*/}
 
-            {/* Profile member */}
-            <AuthenticatedRoute exact path="/profil" component={ProfilPage}/>
-            <AuthenticatedRoute exact path="/information" component={UserInformationPage}/>
-            <AuthenticatedRoute exact path="/invoice" component={SettingOffersPage}/>
-            {/*<AuthenticatedRoute exact path="/invoice/:payment_state" component={SettingOffersPage} paymentCheck={true} />*/}
+        {/* Profile member */}
+        <AuthenticatedRoute exact path="/profil" component={ProfilPage}/>
+        <AuthenticatedRoute exact path="/information" component={UserInformationPage}/>
+        <AuthenticatedRoute exact path="/invoice" component={SettingOffersPage}/>
+        {/*<AuthenticatedRoute exact path="/invoice/:payment_state" component={SettingOffersPage} paymentCheck={true} />*/}
 
-            {/* Admin dashboard */}
-            <AdminRoute exact path="/admin" component={AdminPage}/>
-        </div>
+        {/* Admin dashboard */}
+        <AdminRoute exact path="/admin" component={AdminPage}/>
+    </div>
 );
 
 export default RouterExample

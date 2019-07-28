@@ -1,5 +1,6 @@
 #sidebar_wrapper{
     width: 10%;
+    height: 100vh;
     min-width: 220px;
     background : #2A3F52;
     border-top: solid white 1px;

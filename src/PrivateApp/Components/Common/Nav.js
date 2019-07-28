@@ -16,7 +16,7 @@ const Nav = () => {
                             <Link to="/immobilier">
                                 <li><span className="glyphicon glyphicon-home"></span>Vos biens</li>
                             </Link>
-                            <Link to="/locataires">
+                            <Link to="/locataire">
                                 <li><span className="glyphicon glyphicon-user"></span>Locataires</li>
                             </Link>
                             <Link to="/documents">
