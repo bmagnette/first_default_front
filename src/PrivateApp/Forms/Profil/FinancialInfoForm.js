@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import {BACK_URL} from "../../../constants";
 
 
@@ -51,17 +51,17 @@ class FinancialInfoForm extends React.Component{
 
     render(){
         return(
-            <form>
-                <FormGroup>
-                    <ControlLabel>Revenu global du foyer</ControlLabel>
-                    <FormControl defaultValue={this.state.global_revenu} type="text" placeholder="48000e brut" name="global_revenu" onChange={this.handleChange}/>
-                </FormGroup>
-                <FormGroup>
-                    <ControlLabel>Nombre de parts</ControlLabel>
-                    <FormControl defaultValue={this.state.part_number} type="text" placeholder="4 parts" name="part_number" onChange={this.handleChange}/>
-                </FormGroup>
+            <Form>
+                <Form.Group>
+                    <Form.Label>Revenu global du foyer</Form.Label>
+                    <Form.Control defaultValue={this.state.global_revenu} type="text" placeholder="48000e brut" name="global_revenu" onChange={this.handleChange}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Nombre de parts</Form.Label>
+                    <Form.Control defaultValue={this.state.part_number} type="text" placeholder="4 parts" name="part_number" onChange={this.handleChange}/>
+                </Form.Group>
                 <div>
-                    <ControlLabel>Taux marginal d'imposition</ControlLabel>
+                    <Form.Label>Taux marginal d'imposition</Form.Label>
                     <select defaultValue={this.state.tmi} onChange={this.handleChangeOption}>
                         <option name={"option_0"} value={0}>0 %</option>
                         <option name={"option_14"} value={14}>14 %</option>
@@ -71,7 +71,7 @@ class FinancialInfoForm extends React.Component{
                 </select>
                 </div>
                 <Button onClick={this.handleSubmit} variant="primary" type="submit">Enregistrer</Button>
-            </form>
+            </Form>
         )
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
+import { Button, FormControl, Form } from 'react-bootstrap';
 import {Link, Redirect} from 'react-router-dom';
 import '../../public/css/PublicApp/public_form.css';
 import NotificationSystem from "react-notification-system";
@@ -133,7 +133,7 @@ class SusbcribeForm extends React.Component{
                 <div className="signup_frame">
                     <div className="signup_frame_left">
                     </div>
-                    <form id="sign_up_id" className="signup_frame_right" onSubmit={this.handleSubmit}>
+                    <Form id="sign_up_id" className="signup_frame_right" onSubmit={this.handleSubmit}>
                         <div className="sign_up_frame_right_wrapper">
                             <div className="signup_name_wrapper">
                                 <div className="btn_gender_wrapper">
@@ -142,50 +142,50 @@ class SusbcribeForm extends React.Component{
                                         <input type="button" name="gender" className={"btn btn-" + this.state.isFemale} value="Mme" onClick={this.handleClickFemaleGender}/>
                                     </div>
                                 </div>
-                                <FormGroup>
-                                    <ControlLabel>Nom de famille</ControlLabel>
-                                    <FormControl type="text" name="last_name" onChange={this.handleChange}/>
-                                    <FormControl.Feedback />
-                                </FormGroup>
-                                <FormGroup>
-                                    <ControlLabel>Prénom</ControlLabel>
+                                <Form.Group>
+                                    <Form.Label>Nom de famille</Form.Label>
+                                    <Form.Control type="text" name="last_name" onChange={this.handleChange}/>
+                                    <Form.Control.Feedback />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>Prénom</Form.Label>
                                     <FormControl type="text" name="first_name" onChange={this.handleChange}/>
                                     <FormControl.Feedback />
-                                </FormGroup>
+                                </Form.Group>
                             </div>
                             <div>
-                                <FormGroup validationState={this.getValidationState()}>
-                                    <ControlLabel>Email</ControlLabel>
-                                    <FormControl type="email" name="email" onChange={this.handleChange}/>
-                                    <FormControl.Feedback />
-                                </FormGroup>
+                                <Form.Group validationState={this.getValidationState()}>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" name="email" onChange={this.handleChange}/>
+                                    <Form.Control.Feedback />
+                                </Form.Group>
                                 <div className="signup_name_wrapper_password">
-                                    <FormGroup>
-                                        <ControlLabel>Mot de passe</ControlLabel>
-                                        <FormControl type="password" name="password" onChange={this.handleChange}/>
-                                        <FormControl.Feedback />
-                                    </FormGroup>
-                                    <FormGroup>
-                                        <ControlLabel>Resaisir le mot de passe</ControlLabel>
-                                        <FormControl type="password" name="password2" onChange={this.handleChange}/>
-                                        <FormControl.Feedback />
-                                    </FormGroup>
+                                    <Form.Group>
+                                        <Form.Label>Mot de passe</Form.Label>
+                                        <Form.Control type="password" name="password" onChange={this.handleChange}/>
+                                        <Form.Control.Feedback />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Resaisir le mot de passe</Form.Label>
+                                        <Form.Control type="password" name="password2" onChange={this.handleChange}/>
+                                        <Form.Control.Feedback />
+                                    </Form.Group>
                                 </div>
-                                <FormGroup validationState={this.getValidationState()}>
+                                <Form.Group validationState={this.getValidationState()}>
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td><ControlLabel>Date d'anniversaire (MM/DD/YYYY)</ControlLabel></td>
+                                                <td><Form.Label>Date d'anniversaire (MM/DD/YYYY)</Form.Label></td>
                                                 <td><DatePicker selected={this.state.startDate} onChange={this.handleChangeCalendar}/></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </FormGroup>
-                                <FormGroup>
+                                </Form.Group>
+                                <Form.Group>
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td><ControlLabel>Abonnement à la newsletter</ControlLabel></td>
+                                                <td><Form.Label>Abonnement à la newsletter</Form.Label></td>
                                                 <td>
                                                     <label className="switch">
                                                     <input type="checkbox" value={this.state.isNewsletter} checked={this.state.isNewsletter === true} onChange={(e) => this.handleChangeToogle()}/>
@@ -195,14 +195,14 @@ class SusbcribeForm extends React.Component{
                                             </tr>
                                         </tbody>
                                     </table>
-                                </FormGroup>
+                                </Form.Group>
                             </div>
                         <div className="sign_up_submit">
                             <Button type="submit" bsSize="large" active>Submit</Button>
                             <Link to="/signin">Je suis déjà membre</Link>
                         </div>
                         </div>
-                    </form>
+                    </Form>
                 </div>
             </div>
         )

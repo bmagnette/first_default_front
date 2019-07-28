@@ -60,6 +60,10 @@
     margin: 20px;
 }
 
+.real_estate_button_header{
+    display: flex;
+}
+
 .real_estate_button .btn{
     margin: 10px;
 }

@@ -5,6 +5,7 @@ import '../../../public/css/PrivateApp/card.css';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import Streamer from './Streamer';
 import 'react-table/react-table.css';
+import {Modal, Button} from 'react-bootstrap';
 import TenantTable from "../../Tables/TenantTable";
 
 const DashboardPage = () => {

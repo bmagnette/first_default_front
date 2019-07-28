@@ -5,7 +5,7 @@ import '../../../public/css/PrivateApp/card.css';
 import '../../../public/css/PrivateApp/RealEstateView.css';
 import {Link, Redirect} from "react-router-dom";
 import DefaultImage from '../../../public/img/default_house.jpg';
-import {Button, Modal} from 'react-bootstrap';
+import {Button, Modal, Dropdown} from 'react-bootstrap';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import EventModal from '../../Forms/Events/EventModal';
 import {BACK_URL} from "../../../constants";
@@ -426,6 +426,13 @@ class RealEstateView extends React.Component{
                                     <i className="glyphicon glyphicon-trash"></i>
                                     Supprimer
                                 </Button>
+                                <Dropdown>
+                                    <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#/action-1">Ajouter une dépense</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Ajouter un revenu</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </div>
                         </div>
                         <hr/>
@@ -467,14 +474,6 @@ class RealEstateView extends React.Component{
                                                 <li><strong>VAN :</strong> 5</li>
                                             </ul>
                                         </div>
-                                        {/*<div>*/}
-                                            {/*<h4>Évènements</h4>*/}
-                                            {/*<ul>*/}
-                                                {/*{data["events"].map(function(object) {*/}
-                                                    {/*return <li>{object["name_event"]} : {moment(object["start_date"]).format('DD/MM/YYYY')}</li>;*/}
-                                                    {/*})}*/}
-                                            {/*</ul>*/}
-                                        {/*</div>*/}
                                     </div>
                                 </div>
                             </div>

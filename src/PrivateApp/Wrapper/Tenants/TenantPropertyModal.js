@@ -1,5 +1,6 @@
 import React from 'react';
-import { FormGroup, Button, Form, Modal } from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
 import DatePicker from 'react-datepicker';
 
 
@@ -11,7 +12,6 @@ class TenantModal extends  React.Component{
     };
 
     onEdit = () => {
-        this.props.editTenant();
         this.props.onHide();
     };
 
@@ -34,10 +34,10 @@ class TenantModal extends  React.Component{
                         <Form.Label>Nom</Form.Label>
                         <Form.Control defaultValue={values.garantFirstName} type="text" name="garantFirstName" onChange={this.props.handleChange('garantFirstName')} placeholder="Dupont"/>
                     </Form.Group>
-                        <FormGroup>
+                        <Form.Group>
                             <Form.Label>Prénom</Form.Label>
                             <Form.Control defaultValue={values.garantLastName} type="text" name="garantLastName" onChange={this.props.handleChange('garantLastName')} placeholder="Jean"/>
-                        </FormGroup>
+                        </Form.Group>
                         <Form.Group>
                             <Form.Label>Lien</Form.Label>
                             <Form.Control defaultValue={values.garantLink} type="text" name="garantLink" onChange={this.props.handleChange('garantLink')} placeholder="Parent"/>
@@ -56,7 +56,6 @@ class TenantModal extends  React.Component{
             dynamicForm = <div></div>
         }
 
-        console.log(this.props);
 
         return(
             <Modal
@@ -70,7 +69,7 @@ class TenantModal extends  React.Component{
                         {this.props.title}
                     </Modal.Title>
                 </Modal.Header>
-                <form id="add_event_form">
+                <Form id="add_event_form">
                     <Modal.Body>
                         <div>
                         <Form.Group>
@@ -126,7 +125,6 @@ class TenantModal extends  React.Component{
                             </Form.Group>
                             {dynamicForm}
                         </div>
-
                     </Modal.Body>
                     <Modal.Footer>
                         <div className="add_object_button_wrapper">
@@ -134,7 +132,7 @@ class TenantModal extends  React.Component{
                             {buttonToSubmit}
                         </div>
                     </Modal.Footer>
-                </form>
+                </Form>
             </Modal>)
     }
 }

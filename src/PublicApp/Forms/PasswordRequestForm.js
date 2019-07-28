@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormGroup, FormControl, Button, Label } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import '../../public/css/PublicApp/public_form.css';
 import NotificationSystem from "react-notification-system";
@@ -66,16 +66,16 @@ class PasswordRequestForm extends React.Component{
                 <div className="password_request_info">
                     <p className="password_request_text">Entrer votre adresse email pour lancer la procédure de récupération d'email.</p>
                 </div>
-                <form id="password_request_form_id" onSubmit={this.handleSubmit}>
-                    <FormGroup>
-                        <Label>Email</Label>
-                        <FormControl type="email" name="email" onChange={this.handleChange}/>
-                        <FormControl.Feedback />
-                    </FormGroup>
+                <Form id="password_request_form_id" onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" name="email" onChange={this.handleChange}/>
+                        <Form.Control.Feedback />
+                    </Form.Group>
                     <div className="text-center">
                         <Button type="submit">Submit</Button>
                     </div>
-                </form>
+                </Form>
             </div>
         )
     }

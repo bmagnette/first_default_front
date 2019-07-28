@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import TimePicker from 'rc-time-picker';
-import {Button, Modal, FormGroup, Label, FormControl, Checkbox} from "react-bootstrap";
+import {Button, Modal, Form} from "react-bootstrap";
 
 class EventModal extends React.Component {
 
@@ -14,8 +14,8 @@ class EventModal extends React.Component {
             htmlHiden = <div>
                 <hr/>
                 <div className="specific_date_form_wrapper">
-                    <FormGroup className="daily_event_form">
-                        <Label>Heure de rendez-vous</Label>
+                    <Form.Group className="daily_event_form">
+                        <Form.Label>Heure de rendez-vous</Form.Label>
                         <br/>
                         <TimePicker
                             style={{width: 100}}
@@ -25,9 +25,9 @@ class EventModal extends React.Component {
                             onChange={this.props.onChangeHour}
                             showSecond={false}
                         />
-                    </FormGroup>
-                    <FormGroup className="daily_event_form">
-                        <Label>Durée</Label>
+                    </Form.Group>
+                    <Form.Group className="daily_event_form">
+                        <Form.Label>Durée</Form.Label>
                         <br/>
                         <TimePicker
                             style={{width: 100}}
@@ -38,7 +38,7 @@ class EventModal extends React.Component {
                             className="yyy"
                             onChange={this.props.onChangeMinute}
                         />
-                    </FormGroup>
+                    </Form.Group>
                 </div>
             </div>
         }
@@ -52,8 +52,7 @@ class EventModal extends React.Component {
         }
 
         let { eventInfo } = this.props;
-        let booleanValue = eventInfo.isAllDay;
-        console.log(booleanValue);
+
         return (
             <div>
                 <Modal
@@ -61,28 +60,29 @@ class EventModal extends React.Component {
                     onHide={this.props.onHide}
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
-                    centered="true">
+                    centered="true"
+                    >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
                             {this.props.title}
                         </Modal.Title>
                     </Modal.Header>
-                    <form id="add_event_form">
+                    <Form id="add_event_form">
                         <Modal.Body>
-                            <FormGroup controlId="formValidationSuccess1">
-                                <Label>Nom de l'évènement</Label>
-                                <FormControl defaultValue={eventInfo.name_event}  required type="text" name="name_event" onChange={this.props.handleChange}/>
-                            </FormGroup>
-                            <FormGroup controlId="formValidationSuccess3">
-                                <Label>Description</Label>
-                                <FormControl defaultValue={eventInfo.description_event} componentClass="textarea" name="description_event" onChange={this.props.handleChange}/>
-                            </FormGroup>
-                            <FormGroup controlId="formValidationSuccess1">
-                                <Label>Lieux</Label>
-                                <FormControl defaultValue={eventInfo.location_event} required type="text" name="location_event" onChange={this.props.handleChange}/>
-                            </FormGroup>
+                            <Form.Group controlId="formValidationSuccess1">
+                                <Form.Label>Nom de l'évènement</Form.Label>
+                                <Form.Control defaultValue={eventInfo.name_event}  required type="text" name="name_event" onChange={this.props.handleChange}/>
+                            </Form.Group>
+                            <Form.Group controlId="formValidationSuccess3">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control defaultValue={eventInfo.description_event} type="textarea" name="description_event" onChange={this.props.handleChange}/>
+                            </Form.Group>
+                            <Form.Group controlId="formValidationSuccess1">
+                                <Form.Label>Lieux</Form.Label>
+                                <Form.Control defaultValue={eventInfo.location_event} required type="text" name="location_event" onChange={this.props.handleChange}/>
+                            </Form.Group>
                             <div className="center_element">
-                                <Label>Type d'évènements</Label>
+                                <Form.Label>Type d'évènements</Form.Label>
                                 <br/>
                                 <select defaultValue={eventInfo.event_type} onChange={this.props.handleChangeOption} placeholder="Type d'évènements">
                                     <option value="sans" name="sans">Sans catégorie</option>
@@ -93,14 +93,14 @@ class EventModal extends React.Component {
                             </div>
                             <hr/>
                             <div className="daily_event_form_wrapper">
-                                <FormGroup className="daily_event_form" controlId="formValidationSuccess1">
-                                    <Label>Date</Label><br/>
+                                <Form.Group className="daily_event_form" controlId="formValidationSuccess1">
+                                    <Form.Label>Date</Form.Label><br/>
                                     <DatePicker selected={eventInfo.event_date} onChange={this.props.handleChangeCalendar}/>
-                                </FormGroup>
-                                <FormGroup className="daily_event_form" id="formGridCheckbox">
-                                    <Label>Evènement d'une journée</Label>
-                                    <Checkbox type="checkbox" value={eventInfo.isAllDay} checked={eventInfo.isAllDay} onChange={this.props.handleChangeCheckBox}/>
-                                </FormGroup>
+                                </Form.Group>
+                                <Form.Group className="daily_event_form" id="formGridCheckbox">
+                                    <Form.Label>Evènement d'une journée</Form.Label>
+                                    <Form.Check type="checkbox" value={eventInfo.isAllDay} checked={eventInfo.isAllDay} onChange={this.props.handleChangeCheckBox}/>
+                                </Form.Group>
                             </div>
                             {htmlHiden}
                         </Modal.Body>
@@ -108,7 +108,7 @@ class EventModal extends React.Component {
                             {conditionalButton}
                             <Button id="submit_modal" type="submit" size="sm" onClick={this.props.handleSubmit}>{this.props.buttonTitle}</Button>
                         </Modal.Footer>
-                    </form>
+                    </Form>
                 </Modal>
             </div>
         );

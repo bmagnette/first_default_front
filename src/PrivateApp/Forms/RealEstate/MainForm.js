@@ -12,6 +12,7 @@ import TenantForm from "./TenantForm";
 import {withRouter} from "react-router-dom";
 import BuildingTypeForm from "./BuildingTypeForm";
 import {BACK_URL} from "../../../constants";
+import InventaryForm from "./InventaryForm";
 
 class MainForm extends React.Component{
 
@@ -61,6 +62,7 @@ class MainForm extends React.Component{
 
             allLoan: [],
             allTenants: [],
+            allInventory: [],
             tenantStartContract: new Date(),
             tenantDurationContract: '',
             tenantTypeContract: '',
@@ -68,9 +70,16 @@ class MainForm extends React.Component{
             tenantFirstName: '',
             tenantLastName: '',
             tenantWork: '',
+            tenantSalary: '',
             tenantMail: '',
             tenantMobile: '',
             tenantCommentary: '',
+            isGarant: false,
+            garantFirstName: '',
+            garantLastName: '',
+            garantLink: '',
+            garantSalary: '',
+            garantWork: '',
 
             loanType: 'amortissable',
             loanAmount: '',
@@ -79,7 +88,12 @@ class MainForm extends React.Component{
             loanCapitalRate: '',
             loanStartDate: new Date(),
             loanPaymentDate: 1,
-            loanFees: ''
+            loanFees: '',
+
+            inventoryName: '',
+            inventoryQuantity: '',
+            inventoryValue: '',
+            inventoryBought: new Date(),
         }
     }
 
@@ -172,9 +186,26 @@ class MainForm extends React.Component{
                 tenantFirstName: '',
                 tenantLastName: '',
                 tenantWork: '',
+                tenantSalary: '',
                 tenantMail: '',
                 tenantMobile: '',
                 tenantCommentary: '',
+                isGarant: false,
+                garantFirstName: '',
+                garantLastName: '',
+                garantLink: '',
+                garantSalary: '',
+                garantWork: '',
+
+                allInventory: data["inventory"],
+                inventoryName: '',
+                inventoryQuantity: '',
+                inventoryValue: '',
+                modalShowInventory: false,
+                eventClickedInventory: 0,
+                eventInfoInventory: {},
+                inventoryBought: new Date(),
+                inventoryState: '',
 
                 modalShow: false,
                 eventClicked: 0,
@@ -238,6 +269,44 @@ class MainForm extends React.Component{
         this.setState({allLoan: allLoanTemp});
     }};
 
+    editInventory = () => {
+        let self = this.state;
+        let allInventary = self.allInventory;
+        const allInventaryTemp = allInventary.slice();
+
+        for (let myIndex in allInventary) {
+            if (allInventary[myIndex]["id"] === self.eventInfoInventory["id"]) {
+                allInventaryTemp.splice(myIndex, 1);
+                let data = {
+                    "inventoryName": this.state.inventoryName, "inventoryQuantity": this.state.inventoryQuantity,
+                    "inventoryValue": this.state.inventoryValue, "inventoryBought": this.state.inventoryBought,
+                    "id": new Date().toISOString(), "inventoryState": this.state.inventoryState,
+                };
+                console.log(data);
+                allInventaryTemp.push(data);
+            }
+            this.setState({allInventory: allInventaryTemp});
+        }
+    };
+
+    removeInventory = input_id => {
+        let allInventary = this.state.allInventory;
+        const allInventaryTemp = allInventary.slice();
+
+        for(let myIndex in allInventary) {
+            if (allInventary[myIndex]["id"] === input_id) {
+                allInventaryTemp.splice(myIndex, 1);
+            }
+        }
+        this.setState({allInventory : allInventaryTemp})
+    };
+
+    addInventory = input => {
+        let allInventary = this.state.allInventory;
+        allInventary.push(input);
+        this.setState({allInventory: allInventary});
+    };
+
     removeLoan = input_id => {
         let allLoan = this.state.allLoan;
         const allLoanTemp = allLoan.slice();
@@ -273,9 +342,13 @@ class MainForm extends React.Component{
         for(let myIndex in allTenants) {
             if(allTenants[myIndex]["id"] === self.eventInfoTenant["id"]){
                 allTenantsTemp.splice(myIndex, 1);
-                let data = {"tenantStartContract": this.state.tenantStartContract, "tenantDurationContract": this.state.tenantDurationContract, "tenantTypeContract": this.state.tenantTypeContract,
-                    "tenantPaymentDate" : this.state.tenantPaymentDate, "tenantFirstName" : this.state.tenantFirstName, "tenantLastName" :this.state.tenantLastName,
-                    "tenantWork" : this.state.tenantWork, "tenantMail" : this.state.tenantMail, "tenantMobile": this.state.tenantMobile, "tenantCommentary": this.state.tenantCommentary, "id": new Date().toISOString()};
+                let data = {"tenantStartContract": this.state.tenantStartContract, "tenantDurationContract": this.state.tenantDurationContract,
+                    "tenantTypeContract": this.state.tenantTypeContract, "tenantPaymentDate" : this.state.tenantPaymentDate,
+                    "tenantFirstName" : this.state.tenantFirstName, "tenantLastName" :this.state.tenantLastName, "tenantSalary": this.state.tenantSalary,
+                    "tenantWork" : this.state.tenantWork, "tenantMail" : this.state.tenantMail, "tenantMobile": this.state.tenantMobile,
+                    "tenantCommentary": this.state.tenantCommentary, "id": new Date().toISOString(), "isGarant": this.state.isGarant,
+                    "garantFirstName": this.state.garantFirstName, "garantLastName":  this.state.garantLastName, "garantLink": this.state.garantLink,
+                    "garantSalary":  this.state.garantSalary, "garantWork":  this.state.garantWork};
                 allTenantsTemp.push(data);
             }
             this.setState({allTenants: allTenantsTemp});
@@ -311,12 +384,34 @@ class MainForm extends React.Component{
             loanFees: '',});
     };
 
+    generateDivInventory = () => {
+        this.addInventory({"inventoryName": this.state.inventoryName, "inventoryQuantity": this.state.inventoryQuantity,
+            "inventoryValue": this.state.inventoryValue, "inventoryBought": this.state.inventoryBought,
+            "id": new Date().toISOString(), "inventoryState": this.state.inventoryState});
+
+        this.setState({
+            inventoryName: '',
+            inventoryQuantity: '',
+            inventoryValue: '',
+            modalShowInventory: false,
+            eventClickedInventory: 0,
+            eventInfoInventory: {},
+            inventoryBought: new Date(),
+            inventoryState: ''});
+    };
+
+    handleChangeCheckBox = (event) => {
+        this.setState({isGarant: event.target.checked});
+    };
+
     generateDivSavedTenants = () => {
         this.addTenant({"tenantStartContract": this.state.tenantStartContract, "tenantDurationContract": this.state.tenantDurationContract,
             "tenantTypeContract" : this.state.tenantTypeContract, "tenantPaymentDate": this.state.tenantPaymentDate,
             "tenantFirstName" : this.state.tenantFirstName, "tenantLastName": this.state.tenantLastName,
-            "tenantWork" : this.state.tenantWork, "tenantMail": this.state.tenantMail,
-            "tenantMobile" : this.state.tenantMobile, "tenantCommentary": this.state.tenantCommentary, "id": new Date().toISOString()});
+            "tenantWork" : this.state.tenantWork, "tenantMail": this.state.tenantMail, "tenantSalary": this.state.tenantSalary,
+            "tenantMobile" : this.state.tenantMobile, "tenantCommentary": this.state.tenantCommentary, "id": new Date().toISOString(),
+            "isGarant": this.state.isGarant, "garantFirstName": this.state.garantFirstName, "garantLastName":  this.state.garantLastName,
+            "garantLink": this.state.garantLink, "garantSalary":  this.state.garantSalary, "garantWork":  this.state.garantWork});
         this.setState({
             modalShowTenant: false,
             tenantStartContract: new Date(),
@@ -326,9 +421,16 @@ class MainForm extends React.Component{
             tenantFirstName: '',
             tenantLastName: '',
             tenantWork: '',
+            tenantSalary: '',
             tenantMail: '',
             tenantMobile: '',
-            tenantCommentary: '',});
+            tenantCommentary: '',
+            isGarant: false,
+            garantFirstName: '',
+            garantLastName: '',
+            garantLink: '',
+            garantSalary: '',
+            garantWork: '',});
     };
 
     handleSubmit = (event) => {
@@ -365,16 +467,13 @@ class MainForm extends React.Component{
             "gli_insurance": this.state.gli_insurance,
             "copro_fees": this.state.copro_fees,
 
-            // Info
-            "inventory": [],
             // Details
             "vacancy_rate": this.state.vacancy_rate,
             "maintenance_rate": this.state.maintenance_rate,
 
-            // Loan
+            // List elements.
             "mortgages": this.state.allLoan,
-
-            // Tenants
+            "inventory": this.state.allInventory,
             "tenants": this.state.allTenants,
         });
 
@@ -412,12 +511,22 @@ class MainForm extends React.Component{
     render(){
         let currentForm;
 
+        // Inventory
+        const {allInventory, inventoryState, inventoryBought, inventoryName, inventoryQuantity, inventoryValue, modalShowInventory, eventClickedInventory, eventInfoInventory} = this.state;
+        const valuesInventory = {allInventory, inventoryState, inventoryBought, inventoryName, inventoryQuantity, inventoryValue, modalShowInventory, eventClickedInventory, eventInfoInventory};
+
         // Loan
         const { loanAmount, loanDuration, loanInsuranceRate, loanCapitalRate, loanStartDate, loanFees, loanType, loanPaymentDate, allLoan, eventClicked, modalShow, eventInfo } = this.state;
         const valuesMortgage = { loanAmount, loanDuration, loanInsuranceRate, loanCapitalRate, loanStartDate, loanFees, loanType, loanPaymentDate, allLoan, eventClicked, modalShow, eventInfo };
 
-        const {tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate, tenantFirstName, tenantLastName, tenantWork, tenantMail, tenantMobile, tenantCommentary, allTenants, eventClickedTenant, modalShowTenant, eventInfoTenant } = this.state;
-        const valuesTenants = {tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate, tenantFirstName, tenantLastName, tenantWork, tenantMail, tenantMobile, tenantCommentary, allTenants, eventClickedTenant, modalShowTenant, eventInfoTenant };
+        const {tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate, tenantFirstName, tenantLastName,
+            tenantWork, tenantMail, tenantMobile, tenantCommentary, allTenants, eventClickedTenant, modalShowTenant, eventInfoTenant,
+            tenantSalary, isGarant, garantFirstName, garantLastName, garantLink, garantSalary, garantWork} = this.state;
+
+        const valuesTenants = {tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate,
+            tenantFirstName, tenantLastName, tenantWork, tenantMail, tenantMobile, tenantCommentary, allTenants,
+            eventClickedTenant, modalShowTenant, eventInfoTenant, tenantSalary, isGarant, garantFirstName, garantLastName,
+            garantLink, garantSalary, garantWork };
 
         // Description
         const {surface, nb_room, address_number, address_extensions, address, zip_code, city_name, value, notary_fees, agency_fees, mobilier, work, rent_HC, charge_rent, charge_fonciere, teom, pno_insurance, gli_insurance, copro_fees, vacancy_rate, maintenance_rate, building_type} = this.state;
@@ -467,6 +576,15 @@ class MainForm extends React.Component{
         else if(this.state.toogleValue === "description_form"){
             currentForm = <DescriptionForm prevStep={this.prevStep} nextStep={this.nextStep} handleChange={this.handleChange} values={valuesDescription}/>
         }
+        else if(this.state.toogleValue === "inventary_form"){
+            let modalClose = () => this.setState({inventoryName: '', inventoryBought: new Date(), inventoryState: '', inventoryQuantity: '', inventoryValue: '', modalShowInventory: false, eventClickedInventory: 0, eventInfoInventory: {}});
+            let modalOpen = () => this.setState({modalShowInventory: true});
+            let showEditInventory = (clicked_loan_info) => this.setState({modalShowInventory: true, eventClickedInventory : 1, eventInfoInventory: clicked_loan_info});
+
+            currentForm = <InventaryForm prevStep={this.prevStep} nextStep={this.nextStep} values={valuesInventory} onHide={modalClose} unHide={modalOpen}
+                                         onSubmit={this.generateDivInventory} handleChange={this.handleChange} removeInventory={this.removeInventory}
+                                         showEditInventory={showEditInventory} editInventory={this.editInventory} handleChangeCalendar={this.handleChangeCalendar}/>
+        }
         else if(this.state.toogleValue === "loan_form"){
             let modalClose = () => this.setState({modalShow: false, eventClicked: 0, eventInfo: {},                 loanType: 'amortissable',
                 loanAmount: '',
@@ -497,7 +615,7 @@ class MainForm extends React.Component{
             let showEditTenant = (clicked_tenant_info) => this.setState({modalShowTenant: true, eventClickedTenant : 1, eventInfoTenant: clicked_tenant_info});
             let modalOpen = () => this.setState({modalShowTenant: true});
             currentForm = <TenantForm prevStep={this.prevStep} nextStep={this.nextStep} onHide={modalClose} unHide={modalOpen} onSubmit={this.generateDivSavedTenants}  handleChange={this.handleChange}
-                                      handleChangeCalendar={this.handleChangeCalendar} values={valuesTenants} removeTenant={this.removeTenant} showEditTenant={showEditTenant} editTenant={this.editTenant}/>
+                                      handleChangeCalendar={this.handleChangeCalendar} values={valuesTenants} removeTenant={this.removeTenant} showEditTenant={showEditTenant} editTenant={this.editTenant} handleChangeCheckBox={this.handleChangeCheckBox}/>
         }
 
         return(
@@ -514,8 +632,9 @@ class MainForm extends React.Component{
                         <ToggleButton disabled value="type_form">Détention</ToggleButton>
                         <ToggleButton disabled value="fiscalite_form">Fiscalité</ToggleButton>
                         <ToggleButton disabled value="description_form">Description</ToggleButton>
-                        <ToggleButton disabled value="loan_form">Prêt bancaire</ToggleButton>
-                        <ToggleButton disabled value="tenant_form">Locataire</ToggleButton>
+                        <ToggleButton disabled value="inventary_form">Inventaire</ToggleButton>
+                        <ToggleButton disabled value="loan_form">Prêts bancaires</ToggleButton>
+                        <ToggleButton disabled value="tenant_form">Locataires</ToggleButton>
                     </ToggleButtonGroup>
                 </div>
                 <form onSubmit={this.handleSubmit}>

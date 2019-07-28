@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
+import { Button, Form, FormGroup, ControlLabel } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import NotificationSystem from "react-notification-system";
 
@@ -55,21 +55,21 @@ class EditProfilForm extends React.Component{
                     <NotificationSystem ref="notificationSystem" />
                 </div>
                 <h4>Changement d'email</h4>
-                <form onSubmit={this.handleSubmit}>
-                        <FormGroup validationState={this.getValidationState()}>
-                            <ControlLabel>Ancien email :</ControlLabel>
-                            <FormControl type="email" name="old_email" onChange={this.handleChange}/>
-                            <FormControl.Feedback />
-                        </FormGroup>
-                        <FormGroup validationState={this.getValidationState()}>
-                            <ControlLabel>Nouvelle email :</ControlLabel>
-                            <FormControl type="email" name="new_email" onChange={this.handleChange}/>
-                            <FormControl.Feedback />
-                        </FormGroup>
+                <Form onSubmit={this.handleSubmit}>
+                        <Form.Group validationState={this.getValidationState()}>
+                            <Form.Label>Ancien email :</Form.Label>
+                            <Form.Control type="email" name="old_email" onChange={this.handleChange}/>
+                            <Form.Control.Feedback />
+                        </Form.Group>
+                        <Form.Group validationState={this.getValidationState()}>
+                            <Form.Label>Nouvelle email :</Form.Label>
+                            <Form.Control type="email" name="new_email" onChange={this.handleChange}/>
+                            <Form.Control.Feedback />
+                        </Form.Group>
                     <div className="text-center">
                         <Button type="submit">Submit</Button>
                     </div>
-                </form>
+                </Form>
             </div>
         )
     }

@@ -33,11 +33,11 @@ class TenantForm extends React.Component {
 
         let conditionalModal = <div></div>
         if(this.props.values.eventClickedTenant === 1){
-            conditionalModal = <TenantModal title={"Modifier un locataire"} buttonName={"Modifier"}  show={values.modalShowTenant} onHide={this.props.onHide} onSubmit={this.props.onSubmit} values={this.props.values.eventInfoTenant} editTenant={this.props.editTenant} handleChange={this.props.handleChange} handleChangeCalendar={this.props.handleChangeCalendar} />
+            conditionalModal = <TenantModal title={"Modifier un locataire"} buttonName={"Modifier"}  show={values.modalShowTenant} onHide={this.props.onHide} onSubmit={this.props.onSubmit} values={this.props.values.eventInfoTenant} editTenant={this.props.editTenant} handleChange={this.props.handleChange} handleChangeCalendar={this.props.handleChangeCalendar} handleChangeCheckBox={this.props.handleChangeCheckBox}/>
 
         }
         else{
-            conditionalModal = <TenantModal title={"Ajouter un locataire"} buttonName={"Ajouter"} show={values.modalShowTenant} onHide={this.props.onHide} onSubmit={this.props.onSubmit} values={values} editTenant={this.props.editTenant} handleChange={this.props.handleChange} handleChangeCalendar={this.props.handleChangeCalendar} />
+            conditionalModal = <TenantModal title={"Ajouter un locataire"} buttonName={"Ajouter"} show={values.modalShowTenant} onHide={this.props.onHide} onSubmit={this.props.onSubmit} values={values} editTenant={this.props.editTenant} handleChange={this.props.handleChange} handleChangeCalendar={this.props.handleChangeCalendar} handleChangeCheckBox={this.props.handleChangeCheckBox}/>
         }
         return (
             <div className="add_apartment_wrapper">

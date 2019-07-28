@@ -16,7 +16,7 @@ class LoanForm extends React.Component {
     };
 
     unValidateForm = () => {
-        this.props.prevStep("description_form", "loan_form_complete")
+        this.props.prevStep("inventary_form", "loan_form_complete")
     };
 
     render() {
