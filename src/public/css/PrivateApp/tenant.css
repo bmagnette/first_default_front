@@ -1,0 +1,79 @@
+.tenant_information_wrapper{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tenant_information_header{
+    background-color: #2A3F52;
+    height: 40px;
+    text-align: center;
+}
+
+.tenant_information_header h4{
+    margin: 0;
+    line-height: 40px;
+    color: white;
+}
+
+.tenant_contact_content{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.tenant_details_wrapper{
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 0 0 10px 10px;
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.tenant_details_wrapper_wrapper{
+    width: 100%;
+}
+.tenant_details_content{
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.tenant_contact_information_wrapper{
+    width: 30%;
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 0 0 10px 10px;
+}
+
+.tenant_contact_details_wrapper{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tenant_contact_information_wrapper ul{
+    list-style-type: none;
+}
+
+.tenant_table_wrapper{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.tenant_table_wrapper .rt-tr-group .rt-tr:hover{
+    color:red;
+    cursor: pointer;
+}
+
+.tenant_table_wrapper h4{
+    text-align: center;
+    margin-top: 0;
+}
+
+.tenant_details_list_wrapper{
+    display: flex;
+}
+
+.tenant_details_list_wrapper ul {
+    list-style-type: none;
+}
