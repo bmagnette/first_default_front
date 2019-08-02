@@ -66,4 +66,4 @@ const RouterExample = () => (
     </div>
 );
 
-export default RouterExample
+export default RouterExample;

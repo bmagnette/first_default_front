@@ -5,14 +5,23 @@
     margin-bottom: 40px;
 }
 
+.real_estate_button_header{
+    display: flex;
+    margin: 50px;
+    width: 20%;
+}
+
+.real_estate_button_header .Dropdown-control{
+    min-width: 175px;
+}
+
+.real_estate_button_header .btn{
+    margin-left: 15px;
+}
+
 .content-right-wrapper, .content-right-wrapper2{
     width: 90%;
     margin: 0 auto;
-}
-
-.content-right-wrapper2 .btn{
-    margin-top: 50px;
-    margin-left: 50px;
 }
 
 .btn-group{

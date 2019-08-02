@@ -12,6 +12,7 @@ class TenantPage extends React.Component{
 
     constructor(props){
         super(props);
+        const user = JSON.parse(localStorage.getItem('USER'));
 
         this.state = {
             tenantStartContract: new Date(),
@@ -32,6 +33,8 @@ class TenantPage extends React.Component{
             garantSalary: '',
             garantWork: '',
             allTenants: [],
+            properties: user["properties"],
+            dropdownValue: {},
             modalShow: false,
             eventClicked: 0,
             eventInfo: {},
@@ -42,6 +45,10 @@ class TenantPage extends React.Component{
         this.setState({[input]: event.target.value});
     };
 
+    handleSelection = (event) => {
+        this.setState({dropdownValue: {value: event.value, label: event.label}});
+    };
+
     handleChangeCalendar = input => (event_date) => {
         this.setState({[input]: event_date});
     };
@@ -50,16 +57,17 @@ class TenantPage extends React.Component{
         this.setState({isGarant: event.target.checked});
     };
 
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = () => {
 
         let body = JSON.stringify({
+            tenantStartContract: this.state.tenantStartContract,
             tenantDurationContract: this.state.tenantDurationContract,
             tenantTypeContract: this.state.tenantTypeContract,
             tenantPaymentDate: this.state.tenantPaymentDate,
             tenantFirstName: this.state.tenantFirstName,
             tenantLastName: this.state.tenantLastName,
             tenantWork: this.state.tenantWork,
+            tenantSalary: this.state.tenantSalary,
             tenantMail: this.state.tenantMail,
             tenantMobile: this.state.tenantMobile,
             tenantCommentary: this.state.tenantCommentary,
@@ -68,10 +76,11 @@ class TenantPage extends React.Component{
             garantLastName: this.state.garantLastName,
             garantLink: this.state.garantLink,
             garantSalary: this.state.garantSalary,
-            garantWork: this.state.garantWork
+            garantWork: this.state.garantWork,
+            propertyID: this.state.dropdownValue["value"],
         });
 
-        fetch(BACK_URL + 'real_estate/property', {
+        fetch(BACK_URL + 'tenant/create', {
             method: "POST",
             headers: {
                 'Authorization': localStorage.getItem('TOKEN'),
@@ -93,6 +102,7 @@ class TenantPage extends React.Component{
     };
 
     render(){
+
         let modalClose = () => this.setState({modalShow: false, eventClickedTenant: 0, eventInfoTenant: {}, tenantStartContract: new Date(),
             tenantDurationContract: '',
             tenantTypeContract: '',
@@ -108,28 +118,30 @@ class TenantPage extends React.Component{
             garantLastName: '',
             garantLink: '',
             garantSalary: '',
-            garantWork: ''});
+            garantWork: '',
+            tenantSalary: '',
+            dropdownValue: {}});
 
         let modalOpen = () => this.setState({modalShow: true});
 
         const {tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate, tenantFirstName, tenantLastName,
             tenantWork, tenantMail, tenantMobile, tenantCommentary, allTenants, eventClickedTenant, modalShowTenant, eventInfoTenant,
-            tenantSalary, isGarant, garantFirstName, garantLastName, garantLink, garantSalary, garantWork} = this.state;
+            tenantSalary, isGarant, garantFirstName, garantLastName, garantLink, garantSalary, garantWork, dropdownValue, properties} = this.state;
 
-        const valuesTenants = {tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate,
+        const valuesTenants = {dropdownValue, tenantStartContract, tenantDurationContract, tenantTypeContract, tenantPaymentDate,
             tenantFirstName, tenantLastName, tenantWork, tenantMail, tenantMobile, tenantCommentary, allTenants,
             eventClickedTenant, modalShowTenant, eventInfoTenant, tenantSalary, isGarant, garantFirstName, garantLastName,
-            garantLink, garantSalary, garantWork};
+            garantLink, garantSalary, garantWork, properties};
 
         return (
             <div id="app_container">
                 <Header/>
                 <div id="content_wrapper">
                     <Nav/>
-                    <TenantModal title={"Ajouter un locataire"} buttonName={"Ajouter"} show={this.state.modalShow} onSubmit={this.handleSubmit} onHide={modalClose} unHide={modalOpen} values={valuesTenants} handleChangeCheckBox={this.handleChangeCheckBox} handleChange={this.handleChange} handleChangeCalendar={this.handleChangeCalendar}/>
+                    <TenantModal title={"Ajouter un locataire"} buttonName={"Ajouter"} handleSelection={this.handleSelection} show={this.state.modalShow} onSubmit={this.handleSubmit} onHide={modalClose} unHide={modalOpen} values={valuesTenants} handleChangeCheckBox={this.handleChangeCheckBox} handleChange={this.handleChange} handleChangeCalendar={this.handleChangeCalendar}/>
                     <div className="content-right-wrapper">
                         <TenantStreamer/>
-                        <div>
+                        <div className="real_estate_button_header">
                             <Button onClick={modalOpen}>Ajouter un locataire</Button>
                         </div>
                         <TenantTable/>

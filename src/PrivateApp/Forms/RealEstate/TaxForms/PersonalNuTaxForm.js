@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../../public/css/PrivateApp/card.css';
 import Particulier from "../../../../public/img/particuliers-recherche-de-personnes.png";
 import Entreprise from "../../../../public/img/personne-importante_318-10744.jpg";
-import { Button } from 'react-bootstrap';
+import { Button, ControlLabel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -39,10 +39,10 @@ class PersonalNuTaxForm extends React.Component {
                             <h4>Revenu Foncier : Micro-Foncier</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isMicroFoncier')} width={500} height={300} src={Particulier} alt="Détention personnel"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isMicroFoncier} checked={values.isMicroFoncier === true} onChange={(e) => this.props.handleChange('isMicroFoncier')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>
@@ -51,10 +51,10 @@ class PersonalNuTaxForm extends React.Component {
                             <h4>Revenue Foncier : Régime réel</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isRegimeReel')} width={500} height={300} src={Entreprise} alt="Détention à travers une société"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isRegimeReel} checked={values.isRegimeReel === true} onChange={(e) => this.props.handleChange('isRegimeReel')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>

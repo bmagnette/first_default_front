@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../../public/css/PublicApp/public_form.css"
 import {BACK_URL} from "../../../constants";
+import { ControlLabel } from "react-bootstrap";
 
 class RadioButtonForm extends React.Component{
     constructor(props) {
@@ -51,10 +52,10 @@ class RadioButtonForm extends React.Component{
 
         render(){
             return(
-                <label className="switch">
+                <ControlLabel className="switch">
                     <input type="checkbox" value={this.state.isNewsletter} checked={this.state.isNewsletter === true} onChange={(e) => this.handleChangeToogle()}/>
                     <span className="slider round"></span>
-                </label>
+                </ControlLabel>
             )
         }
 }

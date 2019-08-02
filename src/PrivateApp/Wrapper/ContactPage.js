@@ -13,7 +13,7 @@ const ContactPage = () => {
                 <Nav/>
                 <div className="content-right-wrapper">
                     <div className="contact_form_title">
-                        <h3>Application NAME support</h3>
+                        <h2>Application NAME support</h2>
                         <p>Nous sommes là pour répondre à vos questions.</p>
                     </div>
                     <ContactForm/>

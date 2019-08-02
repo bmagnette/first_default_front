@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../../public/css/PrivateApp/card.css';
 import Particulier from "../../../../public/img/particuliers-recherche-de-personnes.png";
 import Entreprise from "../../../../public/img/personne-importante_318-10744.jpg";
-import { Button } from 'react-bootstrap';
+import { Button, ControlLabel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -39,10 +39,10 @@ class PersonalMeubleTaxForm extends React.Component {
                             <h4>Revenu BIC : Régime réel simplifié</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isSimplifiedReel')} width={250} height={200} src={Particulier} alt="Régime réel simplifié"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isSimplifiedReel} checked={values.isSimplifiedReel === true} onChange={(e) => this.props.handleChange('isSimplifiedReel')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>
@@ -51,10 +51,10 @@ class PersonalMeubleTaxForm extends React.Component {
                             <h4>Revenu BIC : Régime réel normal</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isNormalReel')} width={250} height={200} src={Entreprise} alt="Détention à travers une société"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isNormalReel} checked={values.isNormalReel === true} onChange={(e) => this.props.handleChange('isNormalReel')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>
@@ -63,10 +63,10 @@ class PersonalMeubleTaxForm extends React.Component {
                             <h4>Revenu BIC : Régime Micro-Bic</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isMicroBic')} width={250} height={200} src={Entreprise} alt="Détention à travers une société"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isMicroBic} checked={values.isMicroBic === true} onChange={(e) => this.props.handleChange('isMicroBic')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>

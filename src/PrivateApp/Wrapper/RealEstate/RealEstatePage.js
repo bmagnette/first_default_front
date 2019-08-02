@@ -2,11 +2,14 @@ import React from 'react';
 import Nav from '../../Components/Common/Nav';
 import Header from '../../Components/Common/Header';
 import {withRouter} from "react-router-dom";
-import {Button, DropdownButton, Dropdown} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import '../../../public/css/PrivateApp/card.css';
 import DefaultImage from '../../../public/img/default_house.jpg';
 import {Link} from 'react-router-dom';
 import numeral from "numeral";
+import Dropdown from 'react-dropdown'
+import 'react-dropdown/style.css'
+
 class RealEstatePage extends React.Component{
 
     constructor(props){
@@ -18,6 +21,7 @@ class RealEstatePage extends React.Component{
             selectionProperties: "",
             properties: [],
             propertiesList: user["properties"],
+            dropdownValue: { value: 'all', label: 'Tous les biens' }
         }
     }
 
@@ -32,18 +36,17 @@ class RealEstatePage extends React.Component{
         let newList = [];
         for(let i = 0, size = mainList.length; i < size ; i++){
 
-            if(mainList[i]["type"] === event.target.name){
+            if(mainList[i]["type"] === event.value){
                 newList.push(mainList[i])
             }
         }
 
-        if(event.target.name === "all"){
-            this.setState({propertiesList: mainList})
+        if(event.value === "all"){
+            this.setState({propertiesList: mainList, dropdownValue: { value: event.value, label: event.label }})
         }
         else{
-            this.setState({propertiesList: newList})
+            this.setState({propertiesList: newList, dropdownValue: { value: event.value, label: event.label }})
         }
-        console.log(this.state);
     };
 
     render(){
@@ -100,6 +103,14 @@ class RealEstatePage extends React.Component{
                 </div>
         }
 
+        const options = [
+            { value: 'all', label: 'Tous les biens' },
+            { value: 'immeuble', label: 'Immeuble'},
+            { value: 'apartment', label: 'Appartement'},
+            { value: 'house', label: 'Maison'},
+            { value: 'garage', label: 'Garage'},
+        ];
+
         return (
             <div id="app_container">
                 <Header/>
@@ -107,25 +118,8 @@ class RealEstatePage extends React.Component{
                     <Nav/>
                     <div className="content-right-wrapper2">
                         <div className="real_estate_button_header">
-                            <div>
-                                <Dropdown>
-                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        Sélection par type
-                                    </Dropdown.Toggle>
-
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item name="all" onClick={this.handleSelection}>Tous les biens</Dropdown.Item>
-                                        <Dropdown.Item name="immeuble" onClick={this.handleSelection}>Immeuble</Dropdown.Item>
-                                        <Dropdown.Item name="apartment" onClick={this.handleSelection}>Appartement</Dropdown.Item>
-                                        <Dropdown.Item name="house" onClick={this.handleSelection}>Maison</Dropdown.Item>
-                                        <Dropdown.Item name="garage" onClick={this.handleSelection}>Garage</Dropdown.Item>
-
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </div>
-                            <div>
-                                <Button onClick={this.handleClick}>Ajouter un bien</Button>
-                            </div>
+                            <Dropdown options={options} onChange={this.handleSelection} value={this.state.dropdownValue}/>
+                            <Button onClick={this.handleClick}>Ajouter un bien</Button>
                         </div>
                         {html}
                     </div>

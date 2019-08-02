@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
 import '../../public/css/PublicApp/public_form.css';
 import NotificationSystem from "react-notification-system";
@@ -115,23 +115,23 @@ class SignInForm extends React.Component{
                 </div>
                 <h2 className="form_title">{APPLICATION_NAME}</h2>
                 {this.ShowDialog()}
-                <Form id="sign_in_id" onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" onChange={this.handleChange}/>
-                        <Form.Control.Feedback />
-                    </Form.Group>
+                <form id="sign_in_id" onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                        <ControlLabel>Email</ControlLabel>
+                        <FormControl type="email" name="email" onChange={this.handleChange}/>
+                        <FormControl.Feedback />
+                    </FormGroup>
 
-                    <Form.Group>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" onChange={this.handleChange}/>
-                        <Form.Control.Feedback />
-                    </Form.Group>
+                    <FormGroup>
+                        <ControlLabel>Password</ControlLabel>
+                        <FormControl type="password" name="password" onChange={this.handleChange}/>
+                        <FormControl.Feedback />
+                    </FormGroup>
 
                     <div className="text-center">
                         <Button type="submit">Submit</Button>
                     </div>
-                </Form>
+                </form>
                 <Link to="/new_password_request">Mot de passe oublié ?</Link>
             </div>
         )}

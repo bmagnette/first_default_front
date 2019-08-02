@@ -5,13 +5,13 @@ import '../../../public/css/PrivateApp/card.css';
 import '../../../public/css/PrivateApp/RealEstateView.css';
 import {Link, Redirect} from "react-router-dom";
 import DefaultImage from '../../../public/img/default_house.jpg';
-import {Button, Modal, Dropdown} from 'react-bootstrap';
+import {Button, Modal, MenuItem, DropdownButton} from 'react-bootstrap';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import EventModal from '../../Forms/Events/EventModal';
 import {BACK_URL} from "../../../constants";
 import numeral from "numeral";
 import Calendar from 'react-calendar';
-import PdfIcon from '../../../public/img/icons/file_pdf2.png';
+import FlowModal from './FlowModal';
 import moment from 'moment';
 
 class RealEstateView extends React.Component{
@@ -38,39 +38,64 @@ class RealEstateView extends React.Component{
             hour_event: m,
             duration_event: m,
             isAllDay: false,
-            event_type: "sans"
+            event_type: "sans",
+
+            redirectToModificationPage: false,
+            showExpenseModal: false,
+            showInflowModal: false,
+            nameExpense: '',
+            amountExpense: null,
+            dateExpense: new Date(),
+            flowType: '',
+            commentaryExpense: ''
         }
     }
 
+    handleSubmitFlow = (event) => {
+        let body = JSON.stringify({
+            nameExpense: this.state.nameExpense,
+            amountExpense: this.state.amountExpense,
+            dateExpense: this.state.dateExpense,
+            flowType: this.state.flowType,
+            commentaryExpense: this.state.commentaryExpense,
+            propertyID: this.props.location.data.id
+        });
+
+        fetch(BACK_URL + 'flow/create', {
+            method: "POST",
+            headers: {
+                'Authorization': localStorage.getItem('TOKEN'),
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: body
+        })
+            .catch(error => {
+                this._addNotification(error["message"], "error")
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(response => {
+                this._addNotification(response["message"], "success");
+            });
+        this.setState({showExpenseModal: false, showInflowModal: false, nameExpense: '', amountExpense: '', dateExpense: new Date(), flowType: '', commentaryExpense: ''});
+        event.preventDefault();
+    };
+
     onChange = date => this.setState({ date });
 
-    onClickButtonGraphics = () => {
-        this.setState({showGraphics: true, showDescriptif: false, showTenants: false, showDebt: false});
-    };
+    onClickButtonGraphics = () => {this.setState({showGraphics: true, showDescriptif: false, showTenants: false, showDebt: false});};
+    onClickButtonDescriptifs = () => {this.setState({showGraphics: false, showDescriptif: true, showTenants: false, showDebt: false});};
+    onClickButtonTenants = () => {this.setState({showGraphics: false, showDescriptif: false, showTenants: true, showDebt: false});};
+    onClickButtonDebt = () => {this.setState({showGraphics: false, showDescriptif: false, showTenants: false, showDebt: true});};
 
-    onClickButtonDescriptifs = () => {
-        this.setState({showGraphics: false, showDescriptif: true, showTenants: false, showDebt: false});
-    };
-
-    onClickButtonTenants = () => {
-        this.setState({showGraphics: false, showDescriptif: false, showTenants: true, showDebt: false});
-    };
-
-    onClickButtonDebt = () => {
-        this.setState({showGraphics: false, showDescriptif: false, showTenants: false, showDebt: true});
-    };
-
-    onClickAddEvent = () => {
-        this.setState({
-            AddEventModalShow: true
-        })
-    };
-
-    onClickDeleteBuilding = () => {
-        this.setState({
-            DeleteBuildingModalShow: true
-        });
-    };
+    // ON SHOW MODAL
+    modalShowExpense = () => this.setState({showExpenseModal: true, flowType: "Out"});
+    modalShowInflow = () => this.setState({showInflowModal: true, flowType: "In"});
+    onClickAddEvent = () => {this.setState({AddEventModalShow: true})};
+    onClickDeleteBuilding = () => {this.setState({DeleteBuildingModalShow: true})};
 
     DeleteBuilding = () => {
         let { data } = this.props.location;
@@ -134,7 +159,7 @@ class RealEstateView extends React.Component{
                 this.setInitialState();
             });
         event.preventDefault();
-        this.onHide();
+        this.setState({AddEventModalShow: false});
     };
 
     handleChange = (event) => {
@@ -149,6 +174,12 @@ class RealEstateView extends React.Component{
         });
     };
 
+    handleChangeCalendar2 = (event_date) => {
+        this.setState({
+            dateExpense: event_date
+        });
+    };
+
     handleChangeOption = (event) => {
         this.setState({event_type: event.target.value})
     };
@@ -158,16 +189,23 @@ class RealEstateView extends React.Component{
     };
 
     render(){
+        const { eventId, data } = this.props.location;
+
+        if(this.state.redirectToModificationPage){
+            return <Redirect to={{pathname: '/immobilier/modifier', data: data }}/>
+        }
+
         let showInformation;
+
+        let modalCloseExpense = () => this.setState({showExpenseModal: false});
+        let modalCloseInflow = () => this.setState({showInflowModal: false});
         let modalClose = () => this.setState({AddEventModalShow: false});
         let modalClose2 = () => this.setState({DeleteBuildingModalShow: false});
 
-        const { eventId, data } = this.props.location;
 
         const { event_date, name_event, description_event, location_event, hour_event, duration_event, isAllDay, event_type } = this.state;
         const values = { event_date, name_event, description_event, location_event, hour_event, duration_event, isAllDay, event_type };
 
-        console.log(values);
         if(this.props.location.data === undefined){
             return <Redirect to='/immobilier'/>;
         }
@@ -395,7 +433,11 @@ class RealEstateView extends React.Component{
                     </ul>
                 </div>
             </div>
-        }
+        };
+
+        const { showExpenseModal, nameExpense, amountExpense, dateExpense, flowType, commentaryExpense } = this.state;
+        const valuesFlow = { showExpenseModal, nameExpense, amountExpense, dateExpense, flowType, commentaryExpense };
+
         return (
             <div id="app_container">
                 <Header/>
@@ -410,29 +452,13 @@ class RealEstateView extends React.Component{
                                 </Link>
                             </div>
                             <div>
-                                <Button onClick={this.onClickAddEvent}
-                                   className="btn btn-default">
-                                    <i className="glyphicon glyphicon-new-window"></i>
-                                    Ajouter un évènement
-                                </Button>
-                                <Link to={{pathname: '/immobilier/modifier', data: data}}>
-                                    <Button className="btn btn-default">
-                                    <i className="glyphicon glyphicon-edit"></i>
-                                    Modification</Button>
-                                </Link>
-
-                                <Button onClick={this.onClickDeleteBuilding}
-                                   className="btn btn-danger">
-                                    <i className="glyphicon glyphicon-trash"></i>
-                                    Supprimer
-                                </Button>
-                                <Dropdown>
-                                    <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">Ajouter une dépense</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Ajouter un revenu</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
+                                <DropdownButton id={"my_id"} title={"Modification sur votre bien"} key={"1"}>
+                                        <MenuItem eventKey="1" onClick={this.onClickAddEvent}>Ajouter un rendez-vous</MenuItem>
+                                        <MenuItem eventKey="2" onClick={this.modalShowInflow}>Ajouter un revenu</MenuItem>
+                                        <MenuItem eventKey="3" onClick={this.modalShowExpense}>Ajouter une dépense</MenuItem>
+                                        <MenuItem eventKey="4" onClick={() => this.setState({redirectToModificationPage: true})}>Modifier votre bien</MenuItem>
+                                        <MenuItem eventKey="5" onClick={this.onClickDeleteBuilding}>Supprimer le bien</MenuItem>
+                                </DropdownButton>
                             </div>
                         </div>
                         <hr/>
@@ -488,7 +514,10 @@ class RealEstateView extends React.Component{
                         {showInformation}
                     </div>
                 </div>
+
                 <EventModal title={"Ajouter un évènement"} buttonTitle="Ajouter" show={this.state.AddEventModalShow} onHide={modalClose} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete} eventInfo={values} handleChangeOption={this.handleChangeOption} handleChangeCheckBox={this.handleChangeCheckBox} handleChange={this.handleChange} onChangeMinute={this.onChangeMinute} onChangeHour={this.onChangeHour} handleChangeCalendar={this.handleChangeCalendar}/>
+                <FlowModal show={this.state.showInflowModal} handleSubmit={this.handleSubmitFlow} onHide={modalCloseInflow} title={"Ajouter un revenu"} buttonTitle={"Ajouter"} values={valuesFlow} handleChange={this.handleChange} handleChangeCalendar={this.handleChangeCalendar2}/>
+                <FlowModal show={this.state.showExpenseModal} handleSubmit={this.handleSubmitFlow} onHide={modalCloseExpense} title={"Ajouter une dépense"} buttonTitle={"Ajouter"} values={valuesFlow} handleChange={this.handleChange} handleChangeCalendar={this.handleChangeCalendar2}/>
                 <Modal show={this.state.DeleteBuildingModalShow} onHide={modalClose2}>
                     <Modal.Header closeButton>
                         <Modal.Title>Supprimer votre bien immobilier</Modal.Title>

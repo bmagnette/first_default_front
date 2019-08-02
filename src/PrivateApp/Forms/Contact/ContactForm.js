@@ -1,5 +1,5 @@
 import React  from 'react';
-import { FormGroup, Button, FormControl, Form } from 'react-bootstrap';
+import { FormGroup, Button, FormControl, Form, ControlLabel } from 'react-bootstrap';
 import NotificationSystem from 'react-notification-system';
 import '../../../public/css/PublicApp/public_form.css';
 import {BACK_URL, APPLICATION_NAME} from "../../../constants";
@@ -105,18 +105,18 @@ class ContactForm extends React.Component {
                 <div>
                     <NotificationSystem ref="notificationSystem" />
                 </div>
-                <Form id="contact_form_id" onSubmit={this.handleSubmit}>
-                    <Form.Group controlId="formValidationSuccess2" validationState={this.state.isValidField.subject}>
-                        <Form.Label>Sujet</Form.Label>
-                        <Form.Control required type="text" name="subject" onChange={this.handleChange}/>
-                        <Form.Control.Feedback />
-                    </Form.Group>
+                <form id="contact_form_id" onSubmit={this.handleSubmit}>
+                    <FormGroup controlId="formValidationSuccess2" validationState={this.state.isValidField.subject}>
+                        <ControlLabel>Sujet</ControlLabel>
+                        <FormControl required type="text" name="subject" onChange={this.handleChange}/>
+                        <FormControl.Feedback />
+                    </FormGroup>
 
-                    <Form.Group controlId="formValidationSuccess3" validationState={this.state.isValidField.textarea}>
-                        <Form.Label>Texte</Form.Label>
-                        <Form.Control required componentClass="textarea" name="textarea" onChange={this.handleChange}/>
-                        <Form.Control.Feedback/>
-                    </Form.Group>
+                    <FormGroup controlId="formValidationSuccess3" validationState={this.state.isValidField.textarea}>
+                        <ControlLabel>Texte</ControlLabel>
+                        <FormControl required componentClass="textarea" name="textarea" onChange={this.handleChange}/>
+                        <FormControl.Feedback/>
+                    </FormGroup>
 
                     <div className="text-center">
                         <div>
@@ -124,7 +124,7 @@ class ContactForm extends React.Component {
                         </div>
                         <Button type="submit">Envoyer</Button>
                     </div>
-                </Form>
+                </form>
             </div>
         );
     }

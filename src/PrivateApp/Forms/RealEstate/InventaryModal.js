@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, FormControl, Form } from 'react-bootstrap';
+import { Button, Modal, FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 
 
@@ -39,29 +39,29 @@ class InventaryModal extends  React.Component{
                         {this.props.title}
                     </Modal.Title>
                 </Modal.Header>
-                <Form id="add_event_form">
+                <form id="add_event_form">
                     <Modal.Body>
-                        <Form.Group>
-                            <Form.Label>Nom du meuble</Form.Label>
-                            <Form.Control defaultValue={values.inventoryName} type="text" name="inventoryName" onChange={this.props.handleChange('inventoryName')} placeholder="Meuble télévision"/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Quantité</Form.Label>
-                            <Form.Control defaultValue={values.inventoryQuantity} type="text" name="inventoryQuantity" onChange={this.props.handleChange('inventoryQuantity')} placeholder="1"/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Valeur du meuble</Form.Label>
-                            <Form.Control defaultValue={values.inventoryValue} type="text" name="inventoryValue" onChange={this.props.handleChange('inventoryValue')} placeholder="50e"/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Etat de conservation</Form.Label>
-                            <Form.Control defaultValue={values.inventoryState} type="text" name="inventoryState" onChange={this.props.handleChange('inventoryState')} placeholder="Bon état, durable encore 5 ans"/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Date de l'achat</Form.Label>
+                        <FormGroup>
+                            <ControlLabel>Nom du meuble</ControlLabel>
+                            <FormControl defaultValue={values.inventoryName} type="text" name="inventoryName" onChange={this.props.handleChange('inventoryName')} placeholder="Meuble télévision"/>
+                        </FormGroup>
+                        <FormGroup>
+                            <ControlLabel>Quantité</ControlLabel>
+                            <FormControl defaultValue={values.inventoryQuantity} type="text" name="inventoryQuantity" onChange={this.props.handleChange('inventoryQuantity')} placeholder="1"/>
+                        </FormGroup>
+                        <FormGroup>
+                            <ControlLabel>Valeur du meuble</ControlLabel>
+                            <FormControl defaultValue={values.inventoryValue} type="text" name="inventoryValue" onChange={this.props.handleChange('inventoryValue')} placeholder="50e"/>
+                        </FormGroup>
+                        <FormGroup>
+                            <ControlLabel>Etat de conservation</ControlLabel>
+                            <FormControl defaultValue={values.inventoryState} type="text" name="inventoryState" onChange={this.props.handleChange('inventoryState')} placeholder="Bon état, durable encore 5 ans"/>
+                        </FormGroup>
+                        <FormGroup>
+                            <ControlLabel>Date de l'achat</ControlLabel>
                             <DatePicker selected={values.inventoryBought} onChange={this.props.handleChangeCalendar('inventoryBought')}/>
-                            <Form.Control.Feedback/>
-                        </Form.Group>
+                            <FormControl.Feedback/>
+                        </FormGroup>
                     </Modal.Body>
                     <Modal.Footer>
                         <div className="add_object_button_wrapper">
@@ -69,7 +69,7 @@ class InventaryModal extends  React.Component{
                             {buttonToSubmit}
                         </div>
                     </Modal.Footer>
-                </Form>
+                </form>
             </Modal>)
     }
 }

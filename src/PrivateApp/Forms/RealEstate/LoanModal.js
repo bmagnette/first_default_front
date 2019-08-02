@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 
 
@@ -48,52 +48,52 @@ class LoanModal extends  React.Component{
                     {this.props.title}
                 </Modal.Title>
             </Modal.Header>
-            <Form id="add_event_form">
+            <form id="add_event_form">
                 <Modal.Body>
-                    <Form.Group>
-                        <Form.Label>Montant du prêt</Form.Label>
-                        <Form.Control defaultValue={values.loanAmount} type="text" name="loan_amount" onChange={this.props.handleChange('loanAmount')} placeholder="Montant emprunté"/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Type du prêt</Form.Label>
+                    <FormGroup>
+                        <ControlLabel>Montant du prêt</ControlLabel>
+                        <FormControl defaultValue={values.loanAmount} type="text" name="loan_amount" onChange={this.props.handleChange('loanAmount')} placeholder="Montant emprunté"/>
+                    </FormGroup>
+                    <FormGroup>
+                        <ControlLabel>Type du prêt</ControlLabel>
                         <select defaultValue={values.loanType} onChange={this.props.handleChange('loanType')} placeholder="Type de prêt">
                             <option value="amortissable" name="amortissable">Amortissable</option>
                             <option value="inFine" name="infine">InFine</option>
                         </select>
-                    </Form.Group>
-                    <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Label>Durée du prêt</Form.Label>
+                    </FormGroup>
+                    <FormGroup controlId="exampleForm.ControlSelect1">
+                        <ControlLabel>Durée du prêt</ControlLabel>
                         <select defaultValue={values.loanDuration} onChange={this.props.handleChange('loanDuration')} placeholder="Durée du prêt en années">
                             {yearLoan.map(function(listValue){
                                 return listValue;
                             })}
                         </select>
-                    </Form.Group>
-                    <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Label>Date de payement</Form.Label>
+                    </FormGroup>
+                    <FormGroup controlId="exampleForm.ControlSelect1">
+                        <ControlLabel>Date de payement</ControlLabel>
                         <select defaultValue={values.loanPaymentDate} onChange={this.props.handleChange('loanPaymentDate')} placeholder="Durée du prêt en années">
                             {dayInMonth.map(function(listValue){
                                 return listValue;
                             })}
                         </select>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Taux du prêt</Form.Label>
-                        <Form.Control defaultValue={values.loanCapitalRate} type="text" name="capital_rate" onChange={this.props.handleChange('loanCapitalRate')} placeholder="Taux du crédit, Exemple : 2.1%"/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Taux de l'assurance</Form.Label>
-                        <Form.Control defaultValue={values.loanInsuranceRate} type="text" name="insurance_rate" onChange={this.props.handleChange('loanInsuranceRate')} placeholder="Taux de l'assurance, Exemple : 0.21%"/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Date</Form.Label>
+                    </FormGroup>
+                    <FormGroup>
+                        <ControlLabel>Taux du prêt</ControlLabel>
+                        <FormControl defaultValue={values.loanCapitalRate} type="text" name="capital_rate" onChange={this.props.handleChange('loanCapitalRate')} placeholder="Taux du crédit, Exemple : 2.1%"/>
+                    </FormGroup>
+                    <FormGroup>
+                        <ControlLabel>Taux de l'assurance</ControlLabel>
+                        <FormControl defaultValue={values.loanInsuranceRate} type="text" name="insurance_rate" onChange={this.props.handleChange('loanInsuranceRate')} placeholder="Taux de l'assurance, Exemple : 0.21%"/>
+                    </FormGroup>
+                    <FormGroup>
+                        <ControlLabel>Date</ControlLabel>
                         <DatePicker selected={values.loanStartDate} onChange={this.props.handleChangeCalendar('loanStartDate')}/>
-                        <Form.Control.Feedback/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Frais de dossiers</Form.Label>
-                        <Form.Control defaultValue={values.loanFees} type="text" name="loan_fees" onChange={this.props.handleChange('loanFees')} placeholder="Frais bancaires faisant suite au prêt"/>
-                    </Form.Group>
+                        <FormControl.Feedback/>
+                    </FormGroup>
+                    <FormGroup>
+                        <ControlLabel>Frais de dossiers</ControlLabel>
+                        <FormControl defaultValue={values.loanFees} type="text" name="loan_fees" onChange={this.props.handleChange('loanFees')} placeholder="Frais bancaires faisant suite au prêt"/>
+                    </FormGroup>
                 </Modal.Body>
                 <Modal.Footer>
                     <div className="add_object_button_wrapper">
@@ -101,7 +101,7 @@ class LoanModal extends  React.Component{
                         {buttonToSubmit}
                     </div>
                 </Modal.Footer>
-            </Form>
+            </form>
         </Modal>)
     }
 }

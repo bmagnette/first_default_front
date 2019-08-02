@@ -47,6 +47,7 @@ class MainForm extends React.Component{
             notary_fees: '',
             agency_fees: '',
             mobilier: '',
+            deductibleWork: '',
             work: '',
 
             rent_HC: '',
@@ -153,6 +154,7 @@ class MainForm extends React.Component{
                 notary_fees: data["notary_fees"],
                 agency_fees: data["agency_fees"],
                 mobilier: data["mobilier"],
+                deductibleWork: data["deductible_work"],
                 work: data["work"],
 
                 rent_HC: data["rent_HC"],
@@ -456,6 +458,7 @@ class MainForm extends React.Component{
             "notary_fees": this.state.notary_fees,
             "agency_fees": this.state.agency_fees,
             "mobilier": this.state.mobilier,
+            "deductible_work": this.state.deductibleWork,
             "work": this.state.work,
 
             // Operationnel
@@ -529,8 +532,8 @@ class MainForm extends React.Component{
             garantLink, garantSalary, garantWork };
 
         // Description
-        const {surface, nb_room, address_number, address_extensions, address, zip_code, city_name, value, notary_fees, agency_fees, mobilier, work, rent_HC, charge_rent, charge_fonciere, teom, pno_insurance, gli_insurance, copro_fees, vacancy_rate, maintenance_rate, building_type} = this.state;
-        const valuesDescription = {surface, nb_room, address_number, address_extensions, address, zip_code, city_name, value, notary_fees, agency_fees, mobilier, work, rent_HC, charge_rent, charge_fonciere, teom, pno_insurance, gli_insurance, copro_fees, vacancy_rate, maintenance_rate, building_type};
+        const {deductibleWork, surface, nb_room, address_number, address_extensions, address, zip_code, city_name, value, notary_fees, agency_fees, mobilier, work, rent_HC, charge_rent, charge_fonciere, teom, pno_insurance, gli_insurance, copro_fees, vacancy_rate, maintenance_rate, building_type} = this.state;
+        const valuesDescription = {deductibleWork, surface, nb_room, address_number, address_extensions, address, zip_code, city_name, value, notary_fees, agency_fees, mobilier, work, rent_HC, charge_rent, charge_fonciere, teom, pno_insurance, gli_insurance, copro_fees, vacancy_rate, maintenance_rate, building_type};
 
         // Building type
         const {isApartment, isHouse, isBuilding, isGarage} = this.state;

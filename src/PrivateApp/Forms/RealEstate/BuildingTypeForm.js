@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../public/css/PrivateApp/card.css';
-import { Button} from 'react-bootstrap';
+import { Button, ControlLabel} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Garage from "../../../public/img/garage.jpg";
 import Apartment from "../../../public/img/apartment.jpg";
@@ -29,20 +29,20 @@ class BuildingTypeForm extends React.Component {
                             <h4>Appartement</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isApartment')} width={300} height={200} src={Apartment} alt="Appartement"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isApartment} checked={values.isApartment === true} onChange={(e) => this.props.handleChange('isApartment')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                         <div className="situation_form_proposition">
                             <h4>Garage</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isGarage')} width={300} height={200} src={Garage} alt="Logement meublé"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isGarage} checked={values.isGarage === true} onChange={(e) => this.props.handleChange('isGarage')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>
@@ -51,20 +51,20 @@ class BuildingTypeForm extends React.Component {
                             <h4>Maison</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isHouse')} width={300} height={200} src={House} alt="House"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isHouse} checked={values.isHouse === true} onChange={(e) => this.props.handleChange('isHouse')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                         <div className="situation_form_proposition">
                             <h4>Immeuble de rapport</h4>
                             <Link to="#"><img onClick={this.props.handleChange('isBuilding')} width={300} height={200} src={Building} alt="Building"/></Link>
                             <div className="situation_form_slider">
-                                <label className="switch">
+                                <ControlLabel className="switch">
                                     <input type="checkbox" value={values.isBuilding} checked={values.isBuilding === true} onChange={(e) => this.props.handleChange('isBuilding')}/>
                                     <span className="slider round"></span>
-                                </label>
+                                </ControlLabel>
                             </div>
                         </div>
                     </div>

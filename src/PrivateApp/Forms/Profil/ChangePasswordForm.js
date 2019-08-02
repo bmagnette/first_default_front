@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup } from 'react-bootstrap';
+import { Button, ControlLabel, FormGroup, FormControl } from 'react-bootstrap';
 import NotificationSystem from "react-notification-system";
 import {BACK_URL} from "../../../constants/index";
 import {Redirect} from "react-router-dom";
@@ -76,26 +76,26 @@ class ChangePasswordForm extends React.Component{
                     <NotificationSystem ref="notificationSystem" />
                 </div>
                 <h4>Changement de mot de passe</h4>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group validationState={this.getValidationState()}>
-                        <Form.Label>Mot de passe actuel</Form.Label>
-                        <Form.Control type="password" name="old_password" onChange={this.handleChange}/>
-                        <Form.Control.Feedback />
-                    </Form.Group>
-                    <Form.Group validationState={this.getValidationState()}>
-                        <Form.Label>Nouveau mot de passe</Form.Label>
-                        <Form.Control type="password" name="new_password" onChange={this.handleChange}/>
-                        <Form.Control.Feedback />
-                    </Form.Group>
-                    <Form.Group validationState={this.getValidationState()}>
-                        <Form.Label>Nouveau mot de passe</Form.Label>
-                        <Form.Control type="password" name="new_password2" onChange={this.handleChange}/>
-                        <Form.Control.Feedback />
-                    </Form.Group>
+                <form onSubmit={this.handleSubmit}>
+                    <FormGroup validationState={this.getValidationState()}>
+                        <ControlLabel>Mot de passe actuel</ControlLabel>
+                        <FormControl type="password" name="old_password" onChange={this.handleChange}/>
+                        <FormControl.Feedback />
+                    </FormGroup>
+                    <FormGroup validationState={this.getValidationState()}>
+                        <ControlLabel>Nouveau mot de passe</ControlLabel>
+                        <FormControl type="password" name="new_password" onChange={this.handleChange}/>
+                        <FormControl.Feedback />
+                    </FormGroup>
+                    <FormGroup validationState={this.getValidationState()}>
+                        <ControlLabel>Nouveau mot de passe</ControlLabel>
+                        <FormControl type="password" name="new_password2" onChange={this.handleChange}/>
+                        <FormControl.Feedback />
+                    </FormGroup>
                     <div className="text-center">
                         <Button type="submit">Submit</Button>
                     </div>
-                </Form>
+                </form>
             </div>
         )
     }

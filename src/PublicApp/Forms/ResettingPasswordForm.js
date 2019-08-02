@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form} from 'react-bootstrap';
+import {Button, ControlLabel, FormControl, FormGroup} from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 import '../../public/css/PublicApp/public_form.css';
 import NotificationSystem from "react-notification-system";
@@ -78,21 +78,21 @@ class ResettingPasswordForm extends React.Component {
                 <div className="password_request_info">
                     <p className="password_request_text">Vous pouvez maintenant modifier votre mot de passe</p>
                 </div>
-                <Form id="password_reset_id" onSubmit={this.handleSubmit}>
-                    <Form.Group>
-                        <Form.Label>Mot de passe</Form.Label>
-                        <Form.Control type="password" name="first_password" onChange={this.handleChange}/>
-                        <Form.Control.Feedback/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Mot de passe</Form.Label>
-                        <Form.Control type="password" name="second_password" onChange={this.handleChange}/>
-                        <Form.Control.Feedback/>
-                    </Form.Group>
+                <form id="password_reset_id" onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                        <ControlLabel>Mot de passe</ControlLabel>
+                        <FormControl type="password" name="first_password" onChange={this.handleChange}/>
+                        <FormControl.Feedback/>
+                    </FormGroup>
+                    <FormGroup>
+                        <ControlLabel>Mot de passe</ControlLabel>
+                        <FormControl type="password" name="second_password" onChange={this.handleChange}/>
+                        <FormControl.Feedback/>
+                    </FormGroup>
                     <div className="text-center">
                         <Button type="submit">Submit</Button>
                     </div>
-                </Form>
+                </form>
             </div>
         )
     }

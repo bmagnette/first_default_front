@@ -1,0 +1,16 @@
+.add_link:hover{
+    cursor: pointer;
+}
+
+.inline_information_form{
+    display: flex;
+    width: 90%;
+}
+
+.inline_information_form .form-control{
+    margin-top: 13px;
+}
+
+.inline_information_form .btn{
+    margin-top: 13px;
+}

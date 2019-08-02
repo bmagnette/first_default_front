@@ -18,8 +18,8 @@ class TenantTable extends React.Component{
             return {
                 onClick: (e) => {
                     this.setState({
-                        selected: rowInfo.index,
-                        redirectTenantPage: true
+                        selected: rowInfo.original.id,
+                        redirectTenantPage: true,
                     });
                 }
             }
@@ -31,7 +31,7 @@ class TenantTable extends React.Component{
     render(){
 
         if(this.state.redirectTenantPage){
-            return <Redirect to="/locataire/view" />
+                return <Redirect to={{pathname: '/locataire/view', rowInfo: this.state.selected }}/>
         }
         const user = JSON.parse(localStorage.getItem('USER'));
         let currentTenant = user["current_tenants"];
@@ -46,16 +46,18 @@ class TenantTable extends React.Component{
         }
         else{
             for (let i = 0; i < currentTenant.length; i++) {
-                let tempDict = {"nom": currentTenant[i]["last_name"], "prenom": currentTenant[i]["first_name"], "mobile":  currentTenant[i]["mobile"],
-                    "finContrat":  currentTenant[i]["contract_end"]};
+                let tempDict = {"id": currentTenant[i]["id"],"nom": currentTenant[i]["first_name"] + "." + currentTenant[i]["last_name"].charAt(0).toUpperCase(), "address": currentTenant[i]["property_address"], "mobile":  currentTenant[i]["mobile"],
+                    "finContrat":  new Date(currentTenant[i]["contract_end"]).toLocaleDateString()};
+                console.log("Start" + currentTenant[i]["contract_started"]);
+                console.log("End" + currentTenant[i]["contract_end"]);
                 dataTenants.push(tempDict);
             }
-            columns = [{Header: 'Nom', accessor: 'nom'}, {Header: 'Prénom', accessor: 'prenom'}, {Header: 'Téléphone', accessor: 'mobile'}, {Header: "Fin de contrat", accessor: 'finContrat'}];
+            columns = [{Header: 'Nom', accessor: 'nom'}, {Header: 'Adresse', accessor: 'address'}, {Header: 'Téléphone', accessor: 'mobile'}, {Header: "Fin de contrat", accessor: 'finContrat'}];
         }
 
         return(
             <div className="tenant_table_wrapper">
-        <ReactTable data={dataTenants} columns={columns} showPagination={false} minRows={0} filterable={false}
+                    <ReactTable data={dataTenants} columns={columns} showPagination={false} minRows={0} filterable={false}
                     sortable={false} resizable={false}  getTrProps={this.rowSelection}/>
             </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FormControl, Form } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, ControlLabel, Checkbox } from 'react-bootstrap';
 import {Link, Redirect} from 'react-router-dom';
 import '../../public/css/PublicApp/public_form.css';
 import NotificationSystem from "react-notification-system";
@@ -133,7 +133,7 @@ class SusbcribeForm extends React.Component{
                 <div className="signup_frame">
                     <div className="signup_frame_left">
                     </div>
-                    <Form id="sign_up_id" className="signup_frame_right" onSubmit={this.handleSubmit}>
+                    <form id="sign_up_id" className="signup_frame_right" onSubmit={this.handleSubmit}>
                         <div className="sign_up_frame_right_wrapper">
                             <div className="signup_name_wrapper">
                                 <div className="btn_gender_wrapper">
@@ -142,67 +142,67 @@ class SusbcribeForm extends React.Component{
                                         <input type="button" name="gender" className={"btn btn-" + this.state.isFemale} value="Mme" onClick={this.handleClickFemaleGender}/>
                                     </div>
                                 </div>
-                                <Form.Group>
-                                    <Form.Label>Nom de famille</Form.Label>
-                                    <Form.Control type="text" name="last_name" onChange={this.handleChange}/>
-                                    <Form.Control.Feedback />
-                                </Form.Group>
-                                <Form.Group>
-                                    <Form.Label>Prénom</Form.Label>
+                                <FormGroup>
+                                    <ControlLabel>Nom de famille</ControlLabel>
+                                    <FormControl type="text" name="last_name" onChange={this.handleChange}/>
+                                    <FormControl.Feedback />
+                                </FormGroup>
+                                <FormGroup>
+                                    <ControlLabel>Prénom</ControlLabel>
                                     <FormControl type="text" name="first_name" onChange={this.handleChange}/>
                                     <FormControl.Feedback />
-                                </Form.Group>
+                                </FormGroup>
                             </div>
                             <div>
-                                <Form.Group validationState={this.getValidationState()}>
-                                    <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" name="email" onChange={this.handleChange}/>
-                                    <Form.Control.Feedback />
-                                </Form.Group>
+                                <FormGroup validationState={this.getValidationState()}>
+                                    <ControlLabel>Email</ControlLabel>
+                                    <FormControl type="email" name="email" onChange={this.handleChange}/>
+                                    <FormControl.Feedback />
+                                </FormGroup>
                                 <div className="signup_name_wrapper_password">
-                                    <Form.Group>
-                                        <Form.Label>Mot de passe</Form.Label>
-                                        <Form.Control type="password" name="password" onChange={this.handleChange}/>
-                                        <Form.Control.Feedback />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Resaisir le mot de passe</Form.Label>
-                                        <Form.Control type="password" name="password2" onChange={this.handleChange}/>
-                                        <Form.Control.Feedback />
-                                    </Form.Group>
+                                    <FormGroup>
+                                        <ControlLabel>Mot de passe</ControlLabel>
+                                        <FormControl type="password" name="password" onChange={this.handleChange}/>
+                                        <FormControl.Feedback />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <ControlLabel>Resaisir le mot de passe</ControlLabel>
+                                        <FormControl type="password" name="password2" onChange={this.handleChange}/>
+                                        <FormControl.Feedback />
+                                    </FormGroup>
                                 </div>
-                                <Form.Group validationState={this.getValidationState()}>
+                                <FormGroup validationState={this.getValidationState()}>
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td><Form.Label>Date d'anniversaire (MM/DD/YYYY)</Form.Label></td>
+                                                <td><ControlLabel>Date d'anniversaire (MM/DD/YYYY)</ControlLabel></td>
                                                 <td><DatePicker selected={this.state.startDate} onChange={this.handleChangeCalendar}/></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </Form.Group>
-                                <Form.Group>
+                                </FormGroup>
+                                <FormGroup>
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td><Form.Label>Abonnement à la newsletter</Form.Label></td>
+                                                <td><ControlLabel>Abonnement à la newsletter</ControlLabel></td>
                                                 <td>
-                                                    <label className="switch">
+                                                    <ControlLabel className="switch">
                                                     <input type="checkbox" value={this.state.isNewsletter} checked={this.state.isNewsletter === true} onChange={(e) => this.handleChangeToogle()}/>
                                                     <span className="slider round"></span>
-                                                    </label>
+                                                    </ControlLabel>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </Form.Group>
+                                </FormGroup>
                             </div>
                         <div className="sign_up_submit">
                             <Button type="submit" bsSize="large" active>Submit</Button>
                             <Link to="/signin">Je suis déjà membre</Link>
                         </div>
                         </div>
-                    </Form>
+                    </form>
                 </div>
             </div>
         )

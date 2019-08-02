@@ -4,7 +4,8 @@ import '../../../public/css/PrivateApp/Streamer.css';
 
 const TenantStreamer = (props) => {
 
-    const {values} = props;
+    const user = JSON.parse(localStorage.getItem('USER'));
+    let currentTenant = user["current_tenants"];
 
     return (
         <div className="streamer_parent_wrapper">
@@ -13,14 +14,14 @@ const TenantStreamer = (props) => {
             <div id="streamer_wrapper">
                 <div className="streamer_element">
                     <h4>Nombre de locataires</h4>
-                    <i>0</i>
+                    <i>{currentTenant.length}</i>
                 </div>
                 <div className="streamer_element">
                     <h4>Prochaine sortie</h4>
                     <i>14/09/2019</i>
                 </div>
                 <div className="streamer_element">
-                    <h4>Frais déduits</h4>
+                    <h4>Frais de gestions</h4>
                     <i>0</i>
                 </div>
                 <div className="streamer_element">
@@ -28,7 +29,7 @@ const TenantStreamer = (props) => {
                     <i>0</i>
                 </div>
                 <div className="streamer_element">
-                    <h4>Imposition</h4>
+                    <h4>Revenu brut mensuel</h4>
                     <i>0.0</i>
                 </div>
             </div>
